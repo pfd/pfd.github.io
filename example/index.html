@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>push playground</title>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    </head>
+
+    <body>
+        <div id="example"></div>
+
+<script id="template" type="text/ractive">
+<nav class="navbar navbar-default">
+  <div class="container">
+      <div class="navbar-header">
+        <a class="navbar-brand">
+            <span class="label label-default">UA</span> Web Push Demo
+        </a>
+      </div>
+      {{#if !channel}}
+        {{#if secure}}
+            <button on-click="@this.register()" type="button" class="btn btn-default navbar-btn navbar-right">Register</button>
+        {{else}}
+            <p class="navbar-text navbar-right">
+                <a target="_blank" href="{{registrationURL}}">Register on secure site</a>
+            </p>
+        {{/if}}
+
+      {{else}}
+        {{#if channel.optedIn}}
+            <p class="navbar-text navbar-right"><a on-click="channel.optOut()">opt out of push</a></p>
+        {{else}}
+            <p class="navbar-text navbar-right"><a on-click="channel.optIn()">opt in to push</a></p>
+        {{/if}}
+      {{/if}}
+  </div>
+</nav>
+<div class="container">
+    {{#each tags}}
+        <div class="well">
+            <h3>{{this}}
+            <small class="pull-right">
+            {{#if channel.optedIn}}
+                {{#if channel.tags.has(this)}}
+                    ☑️&nbsp;&nbsp;Subscribed <a on-click="channel.tags.remove(this)" class="close" style="float:none;" aria-label="Close"><span aria-hidden="true">&times;</span></a>
+                {{else}}
+                    <a on-click="channel.tags.add(this)">Subscribe</a>
+                {{/if}}
+            {{/if}}
+            </small>
+            </h3>
+            <p>
+            They need to take seven and they might take yours. I think calling him that is an insult to the psychotic lowlife community. In my world, we have people in chains, and we can ride them like ponies. Who's calling me? Everybody I know lives here. You can't take the sky from me. Remember when you could just throw a girl in a volcano?
+            </p>
+        </div>
+    {{/each}}
+
+{{#if channel}}
+<pre>
+ID: {{channel.id}}
+optedIn: {{channel.optedIn}}
+{{#if channel.tags.list}}TAGS:
+    {{#each @this.tagMapper(channel.tags.tagMap)}}{{this.name}}: {{JSON.stringify(this.tags)}}{{/each}}
+{{/if}}
+&nbsp;
+{{JSON.stringify(channel, null, 2)}}
+--
+{{JSON.stringify(push, null, 2)}}
+</pre>
+<small><a class="text-muted" on-click="@this.clear()">Clear local storage</a></small>
+{{/if}}
+</div>
+</script>
+        <!-- <script type="text/javascript" src="/dist/ua-sdk.js"></script> -->
+        <script type="text/javascript" src="https://d2ob6tofij0erf.cloudfront.net/web-push-beta/ua-sdk.js"></script>
+        <script type="text/javascript">
+            const options = {
+                vapidPublicKey: 'BB173l8rJtk3Q2PUyoCNHszuZ7EHUZdSRFQFFUwuHQB9X0AmssVKloJZuu6+9L9MnCI6piKFCZuIsyeGz9nWfcc=',
+                appKey: 'Vl0wyG8kSyCyOUW98Wj4xg',
+                token: 'MTpWbDB3eUc4a1N5Q3lPVVc5OFdqNHhnOlZDcnYxUm1RXzJCRHdVd1lkWU1EeW1xWkZYa1RQRjZ0NDlhcDdKSFRtQ2M',
+                // If we need to point at different URLs, uncomment this line.
+                // apiUrl: 'https://go-staging.urbanairship.com',
+                apiUrl: 'https://web-push-api-staging.urbanairship.com',
+
+                // set this to true to get piles of crap spit at your console.
+                debug: true,
+                // this has a default of `/push-worker.js`
+                workerUrl: '/_example/push-worker.js'
+            }
+
+            if (!window.isSecureContext) {
+                // options.secureIframeUrl = 'https://wp.local/example/frame.html'
+                options.secureIframeUrl = 'https://d2ob6tofij0erf.cloudfront.net/_example/frame.html'
+            }
+
+            window.ua_sdk = uaSetup(options)
+        </script>
+
+        <!-- <script src="/example/lib/ractive.min.js" type="text/javascript"></script> -->
+        <script src="/_example/lib/ractive.min.js" type="text/javascript"></script>
+        <script type="text/javascript">
+            const ractive = new Ractive({
+                el: '#example',
+                template: '#template',
+                data: {
+                    tags: ['Basketball', 'Politics', 'Potent Potables'],
+                    channel: ua_sdk.channel,
+                    push: {},
+                    registrationURL: 'https://d2ob6tofij0erf.cloudfront.net/_example/index.html',
+                    // registrationURL: 'https://wp.local/example/',
+                    secure: (window.isSecureContext)
+                },
+                register: () => ua_sdk.register(),
+                // next two lines are just demo support
+                tagMapper: tagMap => [...tagMap].map(a => {return {name: a[0], tags: [...a[1]]}}),
+                clear: () => {localStorage.clear(); location.reload()}
+            })
+
+            ua_sdk.addEventListener('channel', ev => ractive.set({channel: ev.channel}))
+            ua_sdk.addEventListener('tags', ev => ractive.update('channel.tags'))
+            ua_sdk.addEventListener('push', ev => ractive.set('push', ev.push))
+        </script>
+    </body>
+</html>
