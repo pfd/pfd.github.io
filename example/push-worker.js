@@ -5,7 +5,7 @@ uaSetup.worker(self, {
   token: 'MTpWbDB3eUc4a1N5Q3lPVVc5OFdqNHhnOlZDcnYxUm1RXzJCRHdVd1lkWU1EeW1xWkZYa1RQRjZ0NDlhcDdKSFRtQ2M',
   apiUrl: 'https://web-push-api-staging.urbanairship.com',
   defaultIcon: 'https://upload.wikimedia.org/wikipedia/commons/thumb/2/2b/Urban_Airship_Logo.jpg/220px-Urban_Airship_Logo.jpg',
-  defaultTitle: 'UA Web Push',
-  defaultActionURL: 'https://go.urbanairship.com',
+  defaultTitle: 'Urban Airship Release Notes',
+  defaultActionURL: 'https://docs.urbanairship.com',
   debug: true
 })
