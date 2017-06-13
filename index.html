@@ -17,3 +17,12 @@ v.src=c,v.async=!0,v.id="_uasdk",v.rel=e,t.head.appendChild(v)}(window,document,
   });
 
 </script>
+
+<button id="register">Sign up for notifications</button>
+<script>
+   document.getElementById('register').addEventListener('click', function(){
+     UA.then(function(sdk) {
+      sdk.register()
+     })
+   })
+</script>
