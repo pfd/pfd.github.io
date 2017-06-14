@@ -6,7 +6,7 @@ uaSetup.worker(self, {
   // different path.
   // workerUrl: '/push-worker.js',
   
-  defaultIcon: 'https://cupofjo.com/wp\u002Dcontent/uploads/2012/06/avocadotoast\u002D4.jpg',
+  defaultIcon: 'https://pfd.github.io/toast.png',
   defaultTitle: 'I love Avocados',
   defaultActionURL: 'https://pfd.github.io/',
   appKey: '71MGDEShT4uuK6IP-lRSVg',
