@@ -1,0 +1,3 @@
+[submodule "garage-sale"]
+	path = garage-sale
+	url = git@github.com:pfd/garage-sale.git
