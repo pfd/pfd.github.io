@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>SheerID Quickstart</title>
+    <link rel="stylesheet" href="https://s3.amazonaws.com/com.sheerid.resources/common/kraken/0.0.2.sheerid.css" type="text/css" />
+    <link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+<body>
+<script src="https://preview.sheerid.com/docs/sheerid.js"></script>
+
+<div id="my-form">
+  <script>
+      var sheerid = window.sheerid;
+      sheerId.setOptions({logLevel: 'info'});
+
+      // Create a program at trial-preview.sheerid.com
+      var myProgramId = '5c0d45f251cc4d31b7a222ca';
+      var myDiv = document.getElementById('my-form');
+      var myForm = new sheerId.VerificationForm(myDiv, myProgramId);
+  </script>
+</div>
+
+</html>
