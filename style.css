@@ -2,3 +2,13 @@
 .sid-text-input {
  background: pink; 
 }
+
+.sid-birthdate {
+  box-sizing: content-box;
+  width: 50%;
+  text-align: center;
+}
+
+#birthdate-field {
+    align-items: center;
+}
