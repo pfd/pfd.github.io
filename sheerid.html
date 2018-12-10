@@ -1,23 +1,31 @@
 <!DOCTYPE html>
 <html>
+
 <head>
     <title>SheerID Quickstart</title>
     <link rel="stylesheet" href="https://s3.amazonaws.com/com.sheerid.resources/common/kraken/0.0.2.sheerid.css" type="text/css" />
     <link rel="stylesheet" href="style.css" type="text/css" />
 </head>
+
 <body>
-<script src="https://preview.sheerid.com/docs/sheerid.js"></script>
+    <h2>Full form</h2>
+    <script src="https://preview.sheerid.com/docs/sheerid.js"></script>
+    <div id="my-form">
+        <script>
+        var sheerid = window.sheerid;
+        sheerId.setOptions({ logLevel: 'info' });
 
-<div id="my-form">
-  <script>
-      var sheerid = window.sheerid;
-      sheerId.setOptions({logLevel: 'info'});
-
-      // Create a program at trial-preview.sheerid.com
-      var myProgramId = '5c0d45f251cc4d31b7a222ca';
-      var myDiv = document.getElementById('my-form');
-      var myForm = new sheerId.VerificationForm(myDiv, myProgramId);
-  </script>
-</div>
+        // Create a program at trial-preview.sheerid.com
+        var myProgramId = '5c0d45f251cc4d31b7a222ca';
+        var myDiv = document.getElementById('my-form');
+        var myForm = new sheerId.VerificationForm(myDiv, myProgramId);
+        </script>
+    </div>
+    <h2>Birthdate field only</h2>
+    <div id="birthdate-field"></div>
+    <script>
+    var myBirthdateField = new sheerId.BirthdateField(document.getElementById('birthdate-field'));
+    myBirthdateField.setValue('2014-8-24'); // set the value (optional)
+    </script>
 
 </html>
