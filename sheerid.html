@@ -27,5 +27,12 @@
     var myBirthdateField = new sheerId.BirthdateField(document.getElementById('birthdate-field'));
     myBirthdateField.setValue('2014-8-24'); // set the value (optional)
     </script>
+    <!-- SheerID drop-in code -->
+    <a data-sheerid-iframe="true" href="https://services.sheerid.com/verify/5c0c514b2cd3bc121b4ac71b/">Confirm Eligibility</a>
+    <script src="https://services-sandbox.sheerid.com/jsapi/SheerID.js"></script>
+    <script>
+    SheerID.setBaseUrl("https://services-sandbox.sheerid.com/jsapi");
+    SheerID.load('iframe', '1.2', { config: { lightbox: true, mobileRedirect: false, mobileThreshold: 600, top: '25px', closeBtnRight: '25px' } });
+    </script>
 
 </html>
