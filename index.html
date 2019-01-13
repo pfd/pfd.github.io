@@ -2,6 +2,13 @@
 <html>
 
 <head>
+    <!-- Google Tag Manager -->
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+        new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+        j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+        'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+        })(window,document,'script','dataLayer','GTM-NVPPBBQ');</script>
+    <!-- End Google Tag Manager -->
     <title>SheerID Quickstart</title>
     <!-- preview styles
   <link rel="stylesheet" href="https://preview.sheerid.com/docs/sheerid.css" type="text/css" />
@@ -10,48 +17,68 @@
 </head>
 
 <body>
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NVPPBBQ" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
     <script src="https://preview.sheerid.com/docs/sheerid.js"></script>
     <img src="toast.png">
     <div id="web-notify">
         <!-- Web Notify script -->
         <script type="text/javascript">
-        // 86acbd31cd7c09cf30acb66d2fbedc91daa48b86:1540508836.86
-        ! function(n, t, c, e, u) {
-            function r(n) { try { f = n(u) } catch (n) { return h = n, void i(p, n) } i(s, f) }
+            // 86acbd31cd7c09cf30acb66d2fbedc91daa48b86:1540508836.86
+            ! function (n, t, c, e, u) {
+                function r(n) {
+                    try {
+                        f = n(u)
+                    } catch (n) {
+                        return h = n, void i(p, n)
+                    }
+                    i(s, f)
+                }
 
-            function i(n, t) {
-                for (var c = 0; c < n.length; c++) d(n[c], t);
-            }
+                function i(n, t) {
+                    for (var c = 0; c < n.length; c++) d(n[c], t);
+                }
 
-            function o(n, t) { return n && (f ? d(n, f) : s.push(n)), t && (h ? d(t, h) : p.push(t)), l }
+                function o(n, t) {
+                    return n && (f ? d(n, f) : s.push(n)), t && (h ? d(t, h) : p.push(t)), l
+                }
 
-            function a(n) { return o(!1, n) }
+                function a(n) {
+                    return o(!1, n)
+                }
 
-            function d(t, c) {
-                n.setTimeout(function() { t(c) }, 0)
-            }
-            var f, h, s = [],
-                p = [],
-                l = { then: o, catch: a, _setup: r };
-            n[e] = l;
-            var v = t.createElement("script");
-            v.src = c, v.async = !0, v.id = "_uasdk", v.rel = e, t.head.appendChild(v)
-        }(window, document, 'https://web-sdk.urbanairship.com/notify/v1/ua-sdk.min.js',
-            'UA', {
-                vapidPublicKey: 'BHNJV0K3rqXZsnsMxJo1DbAsDImS64y1y2lXCJgIloSLPY5OvjBwsCMq3oLOpJBfsuxdwMNhFAgWVnDO7VI3krQ=',
-                websitePushId: 'web.com.urbanairship.safaripass',
-                appKey: '71MGDEShT4uuK6IP-lRSVg',
-                token: 'MTo3MU1HREVTaFQ0dXVLNklQLWxSU1ZnOmUtTzV1TTU3SmNsZE9HRXN6RmhVUEpIVjF3bTVWSnVqakpybnFUSlJQTHc'
-            });
+                function d(t, c) {
+                    n.setTimeout(function () {
+                        t(c)
+                    }, 0)
+                }
+                var f, h, s = [],
+                    p = [],
+                    l = {
+                        then: o,
+                        catch: a,
+                        _setup: r
+                    };
+                n[e] = l;
+                var v = t.createElement("script");
+                v.src = c, v.async = !0, v.id = "_uasdk", v.rel = e, t.head.appendChild(v)
+            }(window, document, 'https://web-sdk.urbanairship.com/notify/v1/ua-sdk.min.js',
+                'UA', {
+                    vapidPublicKey: 'BHNJV0K3rqXZsnsMxJo1DbAsDImS64y1y2lXCJgIloSLPY5OvjBwsCMq3oLOpJBfsuxdwMNhFAgWVnDO7VI3krQ=',
+                    websitePushId: 'web.com.urbanairship.safaripass',
+                    appKey: '71MGDEShT4uuK6IP-lRSVg',
+                    token: 'MTo3MU1HREVTaFQ0dXVLNklQLWxSU1ZnOmUtTzV1TTU3SmNsZE9HRXN6RmhVUEpIVjF3bTVWSnVqakpybnFUSlJQTHc'
+                });
         </script>
         <!-- Web Notify button -->
         <button id="register">Sign up for notifications</button>
         <script>
-        document.getElementById('register').addEventListener('click', function() {
-            UA.then(function(sdk) {
-                sdk.register()
+            document.getElementById('register').addEventListener('click', function () {
+                UA.then(function (sdk) {
+                    sdk.register()
+                })
             })
-        })
         </script>
     </div>
 </body>
