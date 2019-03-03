@@ -1,38 +1,52 @@
 <!DOCTYPE html>
 <html>
 
+
+
+
 <head>
     <title>SheerID Quickstart</title>
-    <link rel="stylesheet" href="https://s3.amazonaws.com/com.sheerid.resources/common/kraken/0.0.2.sheerid.css" type="text/css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@sheerid/jslib@latest/sheerid.css" type="text/css" />
     <link rel="stylesheet" href="style.css" type="text/css" />
 </head>
 
 <body>
     <h2>Full form</h2>
-    <script src="https://preview.sheerid.com/docs/sheerid.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@sheerid/jslib@latest/metrics.js"></script>
     <div id="my-form">
         <script>
-        var sheerid = window.sheerid;
-        sheerId.setOptions({ logLevel: 'info' });
+            var sheerid = window.sheerid;
+            sheerId.setOptions({
+                logLevel: 'info'
+            });
 
-        // Create a program at trial-preview.sheerid.com
-        var myProgramId = '5c4f5b6a732c8d11299422e7';
-        var myDiv = document.getElementById('my-form');
-        var myForm = new sheerId.VerificationForm(myDiv, myProgramId);
+            // Create a program at trial-preview.sheerid.com
+            var myProgramId = '5c4f5b6a732c8d11299422e7';
+            var myDiv = document.getElementById('my-form');
+            var myForm = new sheerId.VerificationForm(myDiv, myProgramId);
         </script>
     </div>
     <h2>Birthdate field only</h2>
     <div id="birthdate-field"></div>
     <script>
-    var myBirthdateField = new sheerId.BirthdateField(document.getElementById('birthdate-field'));
-    myBirthdateField.setValue('2014-8-24'); // set the value (optional)
+        var myBirthdateField = new sheerId.BirthdateField(document.getElementById('birthdate-field'));
+        myBirthdateField.setValue('2014-8-24'); // set the value (optional)
     </script>
     <!-- SheerID drop-in code -->
-    <a data-sheerid-iframe="true" href="https://services.sheerid.com/verify/5c0c514b2cd3bc121b4ac71b/">Confirm Eligibility</a>
+    <a data-sheerid-iframe="true" href="https://services.sheerid.com/verify/5c0c514b2cd3bc121b4ac71b/">Confirm
+        Eligibility</a>
     <script src="https://services-sandbox.sheerid.com/jsapi/SheerID.js"></script>
     <script>
-    SheerID.setBaseUrl("https://services-sandbox.sheerid.com/jsapi");
-    SheerID.load('iframe', '1.2', { config: { lightbox: true, mobileRedirect: false, mobileThreshold: 600, top: '25px', closeBtnRight: '25px' } });
+        SheerID.setBaseUrl("https://services-sandbox.sheerid.com/jsapi");
+        SheerID.load('iframe', '1.2', {
+            config: {
+                lightbox: true,
+                mobileRedirect: false,
+                mobileThreshold: 600,
+                top: '25px',
+                closeBtnRight: '25px'
+            }
+        });
     </script>
 
 </html>
