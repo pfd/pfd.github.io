@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@sheerid/jslib@latest/sheerid.css" type="text/css" />
+    <script src="https://cdn.jsdelivr.net/npm/@sheerid/jslib@latest/metrics.js"></script>
+</head>
+
+<body>
+    <script src="https://cdn.jsdelivr.net/npm/@sheerid/jslib@latest/sheerid.js"></script>
+    <div id="my-form"></div>
+    <script>
+        var sheerid = window.sheerid;
+        sheerId.setOptions({
+            logLevel: 'info'
+        });
+
+        // Create a program at trial-preview.sheerid.com
+        var myProgramId = '5c4f5b6a732c8d11299422e7';
+        var myDiv = document.getElementById('my-form');
+        var myForm = new sheerId.VerificationForm(myDiv, myProgramId);
+    </script>
+
+</body>
+
+
+</html>
