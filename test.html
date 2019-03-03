@@ -4,17 +4,13 @@
 
 
 <head>
-    <link rel="stylesheet" href="https://preview.sheerid.com/docs/sheerid.css" type="text/css" />
-    <script src="https://preview.sheerid.com/docs/metrics-preview.js"></script>
-    <!--- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@sheerid/jslib@latest/sheerid.css" type="text/css" />
-    <script src="https://cdn.jsdelivr.net/npm/@sheerid/jslib@latest/metrics.js"></script> -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@sheerid/jslib@latest/sheerid.css" type="text/css" />
+    <script src="https://cdn.jsdelivr.net/npm/@sheerid/jslib@latest/metrics.js"></script>
 </head>
 
 <body>
-    <!--- use sandbox? <script src="https://preview.sheerid.com/docs/sheerid.js"></script>-->
-    <script src="https://services-sandbox.sheerid.com/jsapi/SheerID.js">
-    <!--- <script src="https://cdn.jsdelivr.net/npm/@sheerid/jslib@latest/sheerid.js"></script>-->
     <h2>my form</h2>
+    <script src="https://cdn.jsdelivr.net/npm/@sheerid/jslib@latest/sheerid.js"></script>
     <div id="my-form"></div>
     <script>
         var sheerid = window.sheerid;
@@ -26,22 +22,6 @@
         var myProgramId = '5c4f5b6a732c8d11299422e7';
         var myDiv = document.getElementById('my-form');
         var myForm = new sheerId.VerificationForm(myDiv, myProgramId);
-    </script>
-    <h2>link</h2>
-    <a data-sheerid-iframe="true" href="https://services.sheerid.com/verify/5c4f5b6a732c8d11299422e7/">Confirm
-        Eligibility</a>
-    <script src="https://services-sandbox.sheerid.com/jsapi/SheerID.js"></script>
-    <script>
-        SheerID.setBaseUrl("https://services-sandbox.sheerid.com/jsapi");
-        SheerID.load('iframe', '1.2', {
-            config: {
-                lightbox: true,
-                mobileRedirect: false,
-                mobileThreshold: 600,
-                top: '25px',
-                closeBtnRight: '25px'
-            }
-        });
     </script>
 </body>
 
