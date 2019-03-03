@@ -21,7 +21,22 @@
         var myDiv = document.getElementById('my-form');
         var myForm = new sheerId.VerificationForm(myDiv, myProgramId);
     </script>
-
+    <h2>link</h2>
+    <a data-sheerid-iframe="true" href="https://services.sheerid.com/verify/5c4f5b6a732c8d11299422e7/">Confirm
+        Eligibility</a>
+    <script src="https://services-sandbox.sheerid.com/jsapi/SheerID.js"></script>
+    <script>
+        SheerID.setBaseUrl("https://services-sandbox.sheerid.com/jsapi");
+        SheerID.load('iframe', '1.2', {
+            config: {
+                lightbox: true,
+                mobileRedirect: false,
+                mobileThreshold: 600,
+                top: '25px',
+                closeBtnRight: '25px'
+            }
+        });
+    </script>
 </body>
 
 
