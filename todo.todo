@@ -1,0 +1,11 @@
+QA/Search issues:
+    ☐ add text to all headers
+    ☐ remove unnecessary pages
+
+<!---
+domain: my.sheerid.com
+endpoint: https://services.sheerid.com/rest/v2/verification
+Program ID: 5c0c514b2cd3bc121b4ac71b
+segment: student
+API Token: c5d73b5182bc44a0b7d9bf3d05492d41
+-->
