@@ -1,0 +1,1217 @@
+<!DOCTYPE html>
+
+<html lang="en-us">
+  <head>
+    
+
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Creating Webhooks - SheerID Developer Center</title>
+    <link rel="stylesheet" href="/assets/css/just-the-docs.css">
+    <link rel="stylesheet" href="/assets/css/landingStyle.css">
+    <link rel="stylesheet" href="https://services.sheerid.com/docs/sheerid.css" type="text/css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/docsearch.js@2/dist/cdn/docsearch.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="/assets/css/dropdownStyle.css">
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js" integrity="sha384-tsQFqpEReu7ZLhBV2VZlAu7zcOV+rXbYlF2cqB8txI/8aZajjp4Bqd+V6D5IgvKT" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="/assets/js/just-the-docs.js"></script>
+</head>
+  
+  <div class="page-wrap">
+    <header class="flex-row">
+  <div class="left-items">
+    <div id="menuToggle">
+        <input type="checkbox" id="mobileMenuIcon"/>
+
+        <!-- Burger Menu made by spans only and CSS style-->
+        <span></span>
+        <span></span>
+        <span></span>
+
+        <ul id="menu">
+          <a class="link-mobile-menu menu-version">
+            <li>Versions</li>
+            <div class="arrow next"></div>
+          </a>
+          <div class="version-container">
+           
+          <a class="link-mobile-menu" href="http://developer.sheerid.com/" >
+            <li>Latest (v2.0)</li>
+            <div class="arrow next"></div>
+          </a>
+          
+          <a class="link-mobile-menu" href="http://docs-v05.sheerid.com/" >
+            <li>v0.5</li>
+            <div class="arrow next"></div>
+          </a>
+          
+          </div>
+          
+          <a class="link-mobile-menu" href="/rest-api" >
+            <li>REST API reference</li>
+            <div class="arrow next"></div>
+          </a>
+          
+          <a class="link-mobile-menu" href="/jslib-api" >
+            <li>JS library reference</li>
+            <div class="arrow next"></div>
+          </a>
+          
+          <a class="link-mobile-menu" href="/tutorials" >
+            <li>tutorials</li>
+            <div class="arrow next"></div>
+          </a>
+          
+          <div id="search-mobile" class="search-mobile">
+              <input type="text" class="search-input" placeholder="SEARCH" aria-label="Search" autocomplete="off" id="algoliaSearch">
+          </div>
+        </ul>
+    </div>
+    <a class="main-logo" href="/"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="118" height="26" viewBox="0 0 118 26">
+    <defs>
+        <path id="a" d="M.029 0H82.24v25.806H.03z"/>
+        <path id="c" d="M.088.062h2.819v2.686H.087z"/>
+    </defs>
+    <g fill="none" fill-rule="evenodd">
+        <g>
+            <mask id="b" fill="#fff">
+                <use xlink:href="#a"/>
+            </mask>
+            <path fill="#FFF" d="M57.81 14.534c.174-2.75 2.752-5.501 6.236-5.501 3.483 0 6.061 2.75 6.235 5.5H57.81zm-19.4 0c.173-2.75 2.751-5.501 6.235-5.501 3.483 0 6.06 2.75 6.235 5.5H38.41zm35.472 11.149h3.623V14.84c0-2.683.975-4.11 2.124-4.72.871-.442 2.055-.68 2.612-.68V5.806c-.905.035-3.378.103-4.911 2.209h-.069v-1.7h-3.38v8.558c-.337-5.211-4.76-9.067-9.8-9.067-4.82 0-8.87 3.341-9.724 8.03-.816-4.676-4.978-8.03-9.678-8.03-5.08 0-9.306 3.71-9.836 8.799v-.615c-.035-2.105-.452-3.599-1.219-4.822-1.393-2.106-3.832-3.362-6.827-3.362-.767 0-3.658 0-5.4 2.513h-.07V0h-3.622v16.464c-.477-1.561-1.546-2.96-3.095-3.99-.396-.288-1.771-1.145-4.81-1.742l-.122-.02C7.18 10.253 5.73 9.35 5.73 9.35c-.843-.553-1.367-1.55-1.367-2.602 0-1.77 2.049-3.265 4.472-3.265 1.09 0 2.143.297 2.965.836.957.628 1.506 1.514 1.506 2.43h3.488c0-2.067-1.11-3.98-3.046-5.25C12.335.572 10.636.082 8.835.082c-4.388 0-7.96 2.99-7.96 6.665a6.458 6.458 0 0 0 2.914 5.427c.201.13 2.052 1.29 5.28 1.885l.1.015c2.38.47 3.31 1.094 3.314 1.094l.133.097c1.198.784 1.884 1.903 1.884 3.069 0 2.256-2.47 4.093-5.506 4.093-1.33 0-2.615-.364-3.623-1.024-1.197-.786-1.883-1.904-1.883-3.07H0c0 2.316 1.248 4.463 3.425 5.891l.973-1.41-.972 1.41c1.6 1.049 3.524 1.603 5.568 1.603 4.185 0 7.712-2.395 8.71-5.626v5.391h3.624V14.874c0-3.77 2.055-5.841 5.085-5.841 4.808 0 4.808 4.414 4.808 5.875v10.685h3.622v-8.862c.523 4.873 4.658 8.874 9.767 8.874 2.995 0 7.42-1.53 9.266-6.385h-3.624c-.87 1.63-2.821 3.158-5.503 3.158-2.439 0-5.434-1.494-6.34-5.128h15.906c.75 4.634 4.77 8.355 9.696 8.355 2.995 0 7.42-1.53 9.266-6.385h-3.623c-.87 1.63-2.821 3.158-5.504 3.158-2.438 0-5.434-1.494-6.34-5.128h16.063l.009 8.433z" mask="url(#b)"/>
+        </g>
+        <path fill="#E01E45" d="M84.449.158v25.436h6.216V.158zM104.174 19.673l-5.58-5.501V6.928l5.58 5.502 8.026-7.914C108.845.106 103.866.104 101.042.104h-4.479v.008h-4.087v25.571h9.055c9.815 0 13.307-5.876 13.307-12.859 0-1.13-.099-2.247-.33-3.339l-10.334 10.188zM113.566 23.566h-.543v-.603h1.786v.603h-.539v2.082h-.704z"/>
+        <g transform="translate(115.006 22.9)">
+            <mask id="d" fill="#fff">
+                <use xlink:href="#c"/>
+            </mask>
+            <path fill="#E01E45" d="M.088.062h.904L1.54 1.83h.006l.54-1.768h.908v2.686h-.648L2.37.738 2.362.73l-.588 2.018h-.466L.72.73.713.738l.022 2.01H.088z" mask="url(#d)"/>
+        </g>
+    </g>
+</svg>
+</a>
+    
+      <a class="main-menu-item" href="/rest-api" >REST API reference</a>
+    
+      <a class="main-menu-item" href="/jslib-api" >JS library reference</a>
+    
+      <a class="main-menu-item" href="/tutorials" >tutorials</a>
+    
+  </div>
+
+  <div class="right-items">
+    <div class="dropdown version">
+      <button class="btn btn-secondary btn-sm dropdown-toggle button-link" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">v2.0</button>
+      <div class="dropdown-menu menu" aria-labelledby="dropdownMenuButton">
+        
+        <a class="dropdown-item active version-link" href="http://developer.sheerid.com/">Latest (v2.0)</a>
+        
+        <a class="dropdown-item  version-link" href="http://docs-v05.sheerid.com/">v0.5</a>
+        
+      </div>
+    </div>
+
+    
+    <div class="search">
+      <div class="search-input-wrap">
+        <input type="text" class="search-input hide" placeholder="Search" aria-label="Search" autocomplete="off" id="algoliaSearchDesktop">
+        <img id="searchIcon" class="search-icon" src="https://23s6x22phk5q33910hihb4ku-wpengine.netdna-ssl.com/wp-content/uploads/2018/12/MagGlass_icon_45deg.png">
+      </div>
+    </div>
+    <div class="js-search-results search-results-wrap"></div>
+  </div>
+  <script>
+    $('.menu-version').on('click', function(){
+	    $('.version-container').toggle();
+    })
+  </script>
+  <script src="/assets/js/mobileMenu.js" ></script>
+</header>
+
+    <div class="side-bar">
+  <div class="site-title fs-6 lh-tight">Developer Center</div>
+  <span class="fs-3"><button class="js-main-nav-trigger navigation-list-toggle btn btn-outline" type="button" data-text-toggle="Hide">Menu</button></span>
+  <div class="navigation main-nav js-main-nav">
+    <nav>
+  <ul class="navigation-list">
+    
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+        
+          <li class="navigation-list-item">
+            
+            <a href="https://pfd.github.io/introduction" class="navigation-list-link">What We Offer</a>
+            
+          </li>
+        
+      
+    
+      
+        
+          <li class="navigation-list-item">
+            
+            <a href="https://pfd.github.io/concepts" class="navigation-list-link">How it Works</a>
+            
+          </li>
+        
+      
+    
+      
+        
+          <li class="navigation-list-item">
+            
+            <a href="https://pfd.github.io/getting-started" class="navigation-list-link">Getting Started</a>
+            
+              
+              <ul class="navigation-list-child-list ">
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+              </ul>
+            
+          </li>
+        
+      
+    
+      
+        
+          <li class="navigation-list-item">
+            
+            <a href="https://pfd.github.io/program-settings" class="navigation-list-link">Program Settings</a>
+            
+              
+              <ul class="navigation-list-child-list ">
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+              </ul>
+            
+          </li>
+        
+      
+    
+      
+        
+          <li class="navigation-list-item">
+            
+            <a href="https://pfd.github.io/js-library" class="navigation-list-link">JavaScript Library</a>
+            
+          </li>
+        
+      
+    
+      
+        
+          <li class="navigation-list-item">
+            
+            <a href="https://pfd.github.io/api-quickstart" class="navigation-list-link">REST API</a>
+            
+          </li>
+        
+      
+    
+      
+        
+          <li class="navigation-list-item active">
+            
+            <a href="https://pfd.github.io/tutorials" class="navigation-list-link">Tutorials</a>
+            
+              
+              <ul class="navigation-list-child-list ">
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                    <li class="navigation-list-item ">
+                      
+                      <a href="https://pfd.github.io/tutorials/api-walkthrough" class="navigation-list-link">API Walkthrough</a>
+                      
+                    </li>
+                  
+                
+                  
+                
+                  
+                
+                  
+                    <li class="navigation-list-item ">
+                      
+                      <a href="https://pfd.github.io/tutorials/verification-limit" class="navigation-list-link">Verification Limit</a>
+                      
+                    </li>
+                  
+                
+                  
+                    <li class="navigation-list-item  active">
+                      
+                      <a href="https://pfd.github.io/tutorials/webhooks" class="navigation-list-link active">Creating Webhooks</a>
+                      
+                    </li>
+                  
+                
+                  
+                    <li class="navigation-list-item ">
+                      
+                      <a href="https://pfd.github.io/tutorials/fetching-organizations" class="navigation-list-link">Searching Organizations</a>
+                      
+                    </li>
+                  
+                
+              </ul>
+            
+          </li>
+        
+      
+    
+      
+        
+          <li class="navigation-list-item">
+            
+            <a href="https://pfd.github.io/reporting" class="navigation-list-link">Reporting</a>
+            
+              
+              <ul class="navigation-list-child-list ">
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                    <li class="navigation-list-item ">
+                      
+                      <a href="https://pfd.github.io/reporting/glossary" class="navigation-list-link">Reporting Glossary</a>
+                      
+                    </li>
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+              </ul>
+            
+          </li>
+        
+      
+    
+      
+        
+      
+    
+      
+        
+      
+    
+      
+        
+          <li class="navigation-list-item">
+            
+            <a href="https://pfd.github.io/reference" class="navigation-list-link">Reference</a>
+            
+          </li>
+        
+      
+    
+      
+        
+      
+    
+      
+        
+      
+    
+      
+        
+      
+    
+  </ul>
+</nav>
+  </div>
+</div>
+
+    
+    <nav class="right-side-bar" id="nava">
+      <div class="toc-title">table of contents</div>
+      <ul class="toc-content-style">
+<li class="toc-entry toc-h2"><a href="#overview">Overview</a></li>
+<li class="toc-entry toc-h2"><a href="#set-up-a-webhook">Set up a Webhook</a></li>
+<li class="toc-entry toc-h2"><a href="#retrieve-verification-details">Retrieve Verification Details</a></li>
+<li class="toc-entry toc-h2"><a href="#remove-and-change-a-webhook">Remove and Change a Webhook</a></li>
+</ul>
+    </nav>
+    
+  </div>
+  <div class="main-content-wrap" id="maincontent">
+    <div class="main-content">
+      <div class="page-content">
+        
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+<link rel="stylesheet" href="/custom.css">
+
+<div markdown="span" class="warning">
+<i class="fa fa-exclamation-circle"></i> <b>Warning:</b>
+This is a development preview.
+</div>
+
+
+        
+        <div class="col-12 col-md-9 col-xl-8 py-md-3 pl-md-5 bd-content" role="main">
+  <h1 class="bd-title" id="content">Creating Webhooks</h1>
+  <p class="bd-lead">In this guide, we’ll go through the necessary steps to create a webhook for any verifications done on your program. The end result is a call from SheerID’s service to an endpoint of your choice when any verification becomes successful.</p>
+</div>
+
+<h2 id="overview">Overview</h2>
+
+<p>Webhooks are used to notify you about successful verifications so you can continue moving users through
+your workflow. When combined with the <code class="highlighter-rouge">details</code> GET request they allow you to do things like receive the reward code for that verification and pass it along to the user.</p>
+
+<h2 id="set-up-a-webhook">Set up a Webhook</h2>
+
+<p>Use the webhook <code class="highlighter-rouge">POST</code> request to configure to configure your webhook URI for your program. Follow the schema in the following example, creating a webhook at <code class="highlighter-rouge">http://example.com</code>:</p>
+
+<p><strong>Request</strong>:</p>
+
+<div class="language-http highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nf">POST</span> <span class="nn">/rest/v2/program/&lt;YOUR_PROGRAM_ID&gt;/webhook</span> <span class="k">HTTP</span><span class="o">/</span><span class="m">1.1</span>
+<span class="na">Accept</span><span class="p">:</span> <span class="s">application/json</span>
+<span class="na">Content-Type</span><span class="p">:</span> <span class="s">application/json</span>
+<span class="na">Authorization</span><span class="p">:</span> <span class="s">Bearer &lt;YOUR_ACCESS_TOKEN&gt;</span>
+
+<span class="p">{</span><span class="w">
+    </span><span class="s2">"callbackUri"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://example.com"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div></div>
+
+<p>A successful request will return a <code class="highlighter-rouge">200 OK</code> response, and your program is now configured to pass
+verification IDs to your webhook.</p>
+
+<div class="language-http highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">HTTP</span><span class="o">/</span><span class="m">1.1</span> <span class="m">200</span> <span class="ne">OK</span>
+<span class="na">Content-Type</span><span class="p">:</span> <span class="s">application/json</span>
+</code></pre></div></div>
+<p><strong>Request Parameters</strong></p>
+
+<ul>
+  <li><code class="highlighter-rouge">callbackUri</code>: <em>string</em>, The URI for your configured webhook.</li>
+</ul>
+
+<h2 id="retrieve-verification-details">Retrieve Verification Details</h2>
+
+<p>Now that your program is configured with your webhook, SheerID will pass the <code class="highlighter-rouge">verificationID</code> to
+the webhook upon a successful verification:</p>
+
+<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
+    </span><span class="s2">"verificationId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"the verification id"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div></div>
+<p>Use the <a href="/rest-api#/verification/getVerificationDetails">Verification Details</a> (<code class="highlighter-rouge">/verification/{verificationId}/details</code>) endpoint to monitor the status of
+the verification, keep track of steps, provide the reward code to end users, etc.</p>
+
+<h2 id="remove-and-change-a-webhook">Remove and Change a Webhook</h2>
+
+<p>Once a webhook is set on a program you may not use the webhooks <code class="highlighter-rouge">POST</code> request to change it. Doing so will result in a <code class="highlighter-rouge">409 Conflict</code> error code, indicating that the webhook already exists.</p>
+
+<p>Use the webhook <code class="highlighter-rouge">DELETE</code> request to remove it.</p>
+
+<div class="language-http highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nf">DELETE</span> <span class="nn">/rest/v2/program/&lt;YOUR_PROGRAM_ID&gt;/webhook</span> <span class="k">HTTP</span><span class="o">/</span><span class="m">1.1</span>
+<span class="na">Accept</span><span class="p">:</span> <span class="s">application/json</span>
+<span class="na">Content-Type</span><span class="p">:</span> <span class="s">application/json</span>
+<span class="na">Authorization</span><span class="p">:</span> <span class="s">Bearer &lt;YOUR_ACCESS_TOKEN&gt;</span>
+
+<span class="p">{</span><span class="w">
+    </span><span class="s2">"callbackUri"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://example.com"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div></div>
+
+<p>Once deleted you can add an updated webhook by using the webhook <code class="highlighter-rouge">POST</code> request again.</p>
+
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous" />
+
+<link rel="stylesheet" href="/custom.css" />
+
+<div class="info">
+<i class="fa fa-info-circle"></i> <b>Note:</b>
+You can also define a webook in the <a href="../program-settings#webhooks">Program Settings page</a>.
+</div>
+
+
+        <br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
+        <br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
+        <br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
+      </div>
+    </div>
+  </div>
+  
+<footer class="landing-footer landing-footer-jtd">
+
+<a class="main-menu-item footer-item" href="https://www.sheerid.com" target="_blank">© 2019 SheerID</a>
+
+<a class="main-menu-item footer-item" href="https://www.sheerid.com/about-sheerid-platform/" target="_blank">About Our Platform</a>
+
+<a class="main-menu-item footer-item" href="https://sheerid.docsend.com/view/69uwwvu" target="_blank">User Guide</a>
+
+<a class="main-menu-item footer-item" href="https://www.sheerid.com/blog/" target="_blank">Blog</a>
+
+<a class="main-menu-item footer-item" href="https://www.sheerid.com/contact-us/" target="_blank">Contact Us</a>
+
+<a class="main-menu-item footer-item" href="https://www.sheerid.com/privacy-policy/" target="_blank">Privacy Policy</a>
+
+<div class="left-items-footer">
+    <div class="mobile-footer-items" >
+    
+    
+    
+    
+      <div class="mobile-foot-item-wrapper">
+        <a class="mobile-foot-item" href="https://www.sheerid.com/about-sheerid-platform/" target="_blank">About Our Platform</a>
+      </div>
+    
+    
+    
+      <div class="mobile-foot-item-wrapper">
+        <a class="mobile-foot-item" href="https://sheerid.docsend.com/view/69uwwvu" target="_blank">User Guide</a>
+      </div>
+    
+    
+    
+      <div class="mobile-foot-item-wrapper">
+        <a class="mobile-foot-item" href="https://www.sheerid.com/blog/" target="_blank">Blog</a>
+      </div>
+    
+    
+    
+      <div class="mobile-foot-item-wrapper">
+        <a class="mobile-foot-item" href="https://www.sheerid.com/contact-us/" target="_blank">Contact Us</a>
+      </div>
+    
+    
+    
+      <div class="mobile-foot-item-wrapper">
+        <a class="mobile-foot-item" href="https://www.sheerid.com/privacy-policy/" target="_blank">Privacy Policy</a>
+      </div>
+    
+    
+    </div>
+    <a class="main-logo footer-logo" href="https://www.sheerid.com/" target="_blank"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="118" height="26" viewBox="0 0 118 26">
+    <defs>
+        <path id="a" d="M.029 0H82.24v25.806H.03z"/>
+        <path id="c" d="M.088.062h2.819v2.686H.087z"/>
+    </defs>
+    <g fill="none" fill-rule="evenodd">
+        <g>
+            <mask id="b" fill="#fff">
+                <use xlink:href="#a"/>
+            </mask>
+            <path fill="#FFF" d="M57.81 14.534c.174-2.75 2.752-5.501 6.236-5.501 3.483 0 6.061 2.75 6.235 5.5H57.81zm-19.4 0c.173-2.75 2.751-5.501 6.235-5.501 3.483 0 6.06 2.75 6.235 5.5H38.41zm35.472 11.149h3.623V14.84c0-2.683.975-4.11 2.124-4.72.871-.442 2.055-.68 2.612-.68V5.806c-.905.035-3.378.103-4.911 2.209h-.069v-1.7h-3.38v8.558c-.337-5.211-4.76-9.067-9.8-9.067-4.82 0-8.87 3.341-9.724 8.03-.816-4.676-4.978-8.03-9.678-8.03-5.08 0-9.306 3.71-9.836 8.799v-.615c-.035-2.105-.452-3.599-1.219-4.822-1.393-2.106-3.832-3.362-6.827-3.362-.767 0-3.658 0-5.4 2.513h-.07V0h-3.622v16.464c-.477-1.561-1.546-2.96-3.095-3.99-.396-.288-1.771-1.145-4.81-1.742l-.122-.02C7.18 10.253 5.73 9.35 5.73 9.35c-.843-.553-1.367-1.55-1.367-2.602 0-1.77 2.049-3.265 4.472-3.265 1.09 0 2.143.297 2.965.836.957.628 1.506 1.514 1.506 2.43h3.488c0-2.067-1.11-3.98-3.046-5.25C12.335.572 10.636.082 8.835.082c-4.388 0-7.96 2.99-7.96 6.665a6.458 6.458 0 0 0 2.914 5.427c.201.13 2.052 1.29 5.28 1.885l.1.015c2.38.47 3.31 1.094 3.314 1.094l.133.097c1.198.784 1.884 1.903 1.884 3.069 0 2.256-2.47 4.093-5.506 4.093-1.33 0-2.615-.364-3.623-1.024-1.197-.786-1.883-1.904-1.883-3.07H0c0 2.316 1.248 4.463 3.425 5.891l.973-1.41-.972 1.41c1.6 1.049 3.524 1.603 5.568 1.603 4.185 0 7.712-2.395 8.71-5.626v5.391h3.624V14.874c0-3.77 2.055-5.841 5.085-5.841 4.808 0 4.808 4.414 4.808 5.875v10.685h3.622v-8.862c.523 4.873 4.658 8.874 9.767 8.874 2.995 0 7.42-1.53 9.266-6.385h-3.624c-.87 1.63-2.821 3.158-5.503 3.158-2.439 0-5.434-1.494-6.34-5.128h15.906c.75 4.634 4.77 8.355 9.696 8.355 2.995 0 7.42-1.53 9.266-6.385h-3.623c-.87 1.63-2.821 3.158-5.504 3.158-2.438 0-5.434-1.494-6.34-5.128h16.063l.009 8.433z" mask="url(#b)"/>
+        </g>
+        <path fill="#E01E45" d="M84.449.158v25.436h6.216V.158zM104.174 19.673l-5.58-5.501V6.928l5.58 5.502 8.026-7.914C108.845.106 103.866.104 101.042.104h-4.479v.008h-4.087v25.571h9.055c9.815 0 13.307-5.876 13.307-12.859 0-1.13-.099-2.247-.33-3.339l-10.334 10.188zM113.566 23.566h-.543v-.603h1.786v.603h-.539v2.082h-.704z"/>
+        <g transform="translate(115.006 22.9)">
+            <mask id="d" fill="#fff">
+                <use xlink:href="#c"/>
+            </mask>
+            <path fill="#E01E45" d="M.088.062h.904L1.54 1.83h.006l.54-1.768h.908v2.686h-.648L2.37.738 2.362.73l-.588 2.018h-.466L.72.73.713.738l.022 2.01H.088z" mask="url(#d)"/>
+        </g>
+    </g>
+</svg>
+</a>
+    
+    
+    <div>
+      <a class="mobile-only mobile-foot-item" href="https://www.sheerid.com" target="_blank">© 2019 SheerID</a>
+    </div>
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+</div>
+</footer>
+  <style>
+.lightbox {width: 100%; height: 100%; position: fixed; top: 0; left: 0; background: rgba(0,0,0,0.85); z-index: 9999999; line-height: 0; cursor: pointer;}
+.lightbox .img {
+	position: relative;
+	top: 50%;
+	left: 50%;
+	-ms-transform: translateX(-50%) translateY(-50%);
+	-webkit-transform: translate(-50%,-50%);
+	transform: translate(-50%,-50%);
+	max-width: 100%;
+	max-height: 100%;
+}
+.lightbox .img img {opacity: 0; pointer-events: none; width: auto;}
+@media screen and (min-width: 1200px) {
+    .lightbox .img {
+		max-width: 1200px;
+    }
+}
+@media screen and (min-height: 1200px) {
+    .lightbox img {
+		max-height: 1200px;
+	}
+}
+.lightbox span {display: block; position: fixed; bottom: 13px; height: 1.5em; line-height: 1.4em; width: 100%; text-align: center; color: white; text-shadow:
+    -1px -1px 0 #000,
+    1px -1px 0 #000,
+    -1px 1px 0 #000,
+    1px 1px 0 #000;
+}
+
+
+
+
+
+
+.lightbox .videoWrapperContainer {
+	position: relative;
+	top: 50%;
+	left: 50%;
+	-ms-transform: translateX(-50%) translateY(-50%);
+	-webkit-transform: translate(-50%,-50%);
+	transform: translate(-50%,-50%);
+	max-width: 900px;
+	max-height: 100%;
+}
+.lightbox .videoWrapperContainer .videoWrapper {
+	height: 0;
+	line-height: 0;
+	margin: 0;
+	padding: 0;
+	position: relative;
+	padding-bottom: 56.333%; /* custom */
+	background: black;
+}
+.lightbox .videoWrapper iframe {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	border: 0;
+	display: block;
+}
+.lightbox #prev, .lightbox #next {height: 50px; line-height: 36px; display: none; margin-top: -25px; position: fixed; top: 50%; padding: 0 15px; cursor: pointer; text-decoration: none; z-index: 99; color: white; font-size: 60px;}
+.lightbox.gallery #prev, .lightbox.gallery #next {display: block;}
+.lightbox #prev {left: 0;}
+.lightbox #next {right: 0;}
+.lightbox #close {height: 50px; width: 50px; position: fixed; cursor: pointer; text-decoration: none; z-index: 99; right: 0; top: 0;}
+.lightbox #close:after, .lightbox #close:before {position: absolute; margin-top: 22px; margin-left: 14px; content: ""; height: 3px; background: white; width: 23px;
+-webkit-transform-origin: 50% 50%;
+-moz-transform-origin: 50% 50%;
+-o-transform-origin: 50% 50%;
+transform-origin: 50% 50%;
+/* Safari */
+-webkit-transform: rotate(-45deg);
+/* Firefox */
+-moz-transform: rotate(-45deg);
+/* IE */
+-ms-transform: rotate(-45deg);
+/* Opera */
+-o-transform: rotate(-45deg);
+}
+.lightbox #close:after {
+/* Safari */
+-webkit-transform: rotate(45deg);
+/* Firefox */
+-moz-transform: rotate(45deg);
+/* IE */
+-ms-transform: rotate(45deg);
+/* Opera */
+-o-transform: rotate(45deg);
+}
+.lightbox, .lightbox * {
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+</style>
+
+<script>
+function is_youtubelink(url) {
+  var p = /^(?:https?:\/\/)?(?:www\.)?(?:youtu\.be\/|youtube\.com\/(?:embed\/|v\/|watch\?v=|watch\?.+&v=))((\w|-){11})(?:\S+)?$/;
+  return (url.match(p)) ? RegExp.$1 : false;
+}
+function is_imagelink(url) {
+	var p = /([a-z\-_0-9\/\:\.]*\.(jpg|jpeg|png|gif))/i;
+	return (url.match(p)) ? true : false;
+}
+function is_vimeolink(url,el) {
+	var id = false;
+	$.ajax({
+	  url: 'https://vimeo.com/api/oembed.json?url='+url,
+	  async: true,
+	  success: function(response) {
+		if(response.video_id) {
+		  id = response.video_id;
+		  $(el).addClass('lightbox-vimeo').attr('data-id',id);
+		}
+	  }
+	});
+}
+
+$(document).ready(function() {
+	//add classes to links to be able to initiate lightboxes
+	$("a").each(function(){
+		var url = $(this).attr('href');
+		if(url) {
+			if(url.indexOf('vimeo') !== -1 && !$(this).hasClass('no-lightbox')) is_vimeolink(url,$(this));
+			if(is_youtubelink(url) && !$(this).hasClass('no-lightbox')) $(this).addClass('lightbox-youtube').attr('data-id',is_youtubelink(url));
+			if(is_imagelink(url) && !$(this).hasClass('no-lightbox')) {
+				$(this).addClass('lightbox-image');
+				var href = $(this).attr('href');
+				var filename = href.split('/').pop();
+				var split = filename.split(".");
+				var name = split[0];
+				$(this).attr('title',name);
+			}
+		}
+	});
+	//remove the clicked lightbox
+	$("body").on("click", ".lightbox", function(event){
+		if($(this).hasClass('gallery')) {
+			$(this).remove();
+			if($(event.target).attr('id')=='next') {
+				//next item
+				if($("a.gallery.current").nextAll("a.gallery:first").length) $("a.gallery.current").nextAll("a.gallery:first").click();
+				else $("a.gallery.current").parent().find("a.gallery").first().click();
+			}
+			else if ($(event.target).attr('id')=='prev') {
+				//prev item
+				if($("a.gallery.current").prevAll("a.gallery:first").length) $("a.gallery.current").prevAll("a.gallery:first").click();
+				else $("a.gallery.current").parent().find("a.gallery").last().click();
+			}
+			else {
+				$("a.gallery").removeClass('gallery');
+			}
+		}
+		else $(this).remove();
+	});
+	//prevent image from being draggable (for swipe)
+	$("body").on('dragstart', ".lightbox img", function(event) { event.preventDefault(); });
+	//add the youtube lightbox on click
+	$("a.lightbox-youtube").click(function(event){
+		event.preventDefault();
+		$('<div class="lightbox"><a id="close"></a><a id="next">&rsaquo;</a><a id="prev">&lsaquo;</a><div class="videoWrapperContainer"><div class="videoWrapper"><iframe src="https://www.youtube.com/embed/'+$(this).attr('data-id')+'?autoplay=1&showinfo=0&rel=0"></iframe></div></div></div>').appendTo('body');
+	});
+	//add the image lightbox on click
+	$("a.lightbox-image").click(function(event){
+		event.preventDefault();
+		$('<div class="lightbox"><a id="close"></a><a id="next">&rsaquo;</a><a id="prev">&lsaquo;</a><div class="img" style="background: url('+$(this).attr('href')+') center center / contain no-repeat;" title="'+$(this).attr('title')+'" ><img src="'+$(this).attr('href')+'" alt="'+$(this).attr('title')+'" /></div><span>'+$(this).attr('title')+'</span></div>').appendTo('body');
+	});
+	//add the vimeo lightbox on click
+	$("body").on("click", "a.lightbox-vimeo", function(event){
+		event.preventDefault();
+		$('<div class="lightbox"><a id="close"></a><a id="next">&rsaquo;</a><a id="prev">&lsaquo;</a><div class="videoWrapperContainer"><div class="videoWrapper"><iframe src="https://player.vimeo.com/video/'+$(this).attr('data-id')+'/?autoplay=1&byline=0&title=0&portrait=0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe></div></div></div>').appendTo('body');
+	});
+
+	$("body").on("click", "a[class*='lightbox-']", function(){
+		var link_elements = $(this).parent().find("a[class*='lightbox-']");
+		$(link_elements).removeClass('current');
+		for (var i=0; i<link_elements.length; i++) {
+			if($(this).attr('href') == $(link_elements[i]).attr('href')) {
+				$(link_elements[i]).addClass('current');
+			}
+		}
+		if(link_elements.length>1) {
+			$('.lightbox').addClass('gallery');
+			$(link_elements).addClass('gallery');
+		}
+	});
+});
+
+$(document).keydown(function(e) {
+    switch(e.which) {
+        case 37: // left
+        $("#prev").click();
+        break;
+        case 39: // right
+        $("#next").click();
+        break;
+	case 27: // esc
+        $("#close").click();
+        break;
+        default: return; // exit this handler for other keys
+    }
+    e.preventDefault(); // prevent the default action (scroll / move caret)
+});
+
+</script>
+
+  <script type="text/javascript" src="/assets/js/replace-jslib-version-snippet.js"></script>
+  <script type="text/javascript" src="/assets/js/scrollSpy.js"></script>
+  <script src="/assets/js/clipBoardForHeaders.js" ></script>
+  <script> $("#nava").scrollspy({ replaceState: true, offset: -25  }); </script>
+  <script src="https://cdn.jsdelivr.net/npm/docsearch.js@2/dist/cdn/docsearch.min.js"></script>
+<script>
+    jQuery(function($) {
+        $.searchState=false;
+        docsearch({
+            appId: 'UOHZ2NO6JA',
+            apiKey: '99056eccfa8a73d0b198c947886c0076',
+            indexName: 'sheerID',
+            inputSelector: '#algoliaSearch',
+            debug: false
+        });
+        docsearch({
+            appId: 'UOHZ2NO6JA',
+            apiKey: '99056eccfa8a73d0b198c947886c0076',
+            indexName: 'sheerID',
+            inputSelector: '#algoliaSearchDesktop',
+            debug: false
+        });
+        $('#searchIcon').click(function () {
+            if(!$.searchState) {
+                $('#algoliaSearchDesktop').removeClass("hide").focus();
+                $.searchState=true;
+            } else {
+                $('#algoliaSearchDesktop').addClass("hide");
+                $.searchState=false;
+            }
+        });
+    });
+</script>
+
+</html>

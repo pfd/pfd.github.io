@@ -1,0 +1,69 @@
+.dropdown {
+    padding: 20px 0rem;
+}
+
+.dropdown-item.active {
+	background-color: #26c1db;
+	opacity: .8;
+}
+
+.dropdown-item:hover {
+	background-color: #26c1db;
+}
+
+.menu {
+	width: 10px;
+}
+
+.button-link {
+	background-color: #26c1db;
+	border: none;
+	font-size: 12px;
+	font-family: arial;
+	box-shadow: none;
+}
+
+.version-link {
+	font-size: 12px;
+	font-family: arial;
+}
+
+.pl-md-5 {
+	padding-left: 0!important;
+}
+
+.dropdown-item {
+	background: #26c1db;
+	opacity: .8;
+	color: white;
+}
+
+.dropdown-item:hover {
+	background: #26c1db;
+	opacity: 1;
+}
+
+.dropdown-menu {
+	padding: 0;
+	border: none;
+	margin: 1rem;
+}
+
+.dropdown-toggle:hover,
+.dropdown-toggle:focus,
+.dropdown-toggle:active ,
+.btn-secondary:not(:disabled):not(.disabled).active,
+.btn-secondary:not(:disabled):not(.disabled):active,
+.show>.btn-secondary.dropdown-toggle {
+	background: #26c1db !important;
+	border: none !important;
+	box-shadow: none;
+}
+
+.btn:focus:hover,
+.btn.selected:focus,
+.btn-secondary:not(:disabled):not(.disabled).active:focus,
+.btn-secondary:not(:disabled):not(.disabled):active:focus,
+.show>.btn-secondary.dropdown-toggle:focus {
+	box-shadow: unset;
+}
