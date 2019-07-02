@@ -1,9 +1,7 @@
 reporting issues:
     ☐ make an index page for reporting?
     ☐ figure out TOC on glossary page- remove numbering
-    ☐ consider swappng out the link-copy js to the anchor thing
     ☐ document ROI impact demo
-    ✔ fix ugly slugify URLs in TOC @done(19-06-30 11:54)
     ☐ test algolia index on dev
     ☐ glossary tooltip?
     {% glossary_tooltip text="cluster" term_id="cluster" %}
@@ -18,11 +16,9 @@ General:
     ☐ add jekyll-sitemap plugin
     ☐ add jekyll-seo plugin
     
-
-
-
-
 Archive:
+  ✔ consider swappng out the link-copy js to the anchor thing @done(19-07-01 16:59) @project(reporting issues)
+  ✔ fix ugly slugify URLs in TOC @done(19-06-30 11:54) @project(reporting issues)
   ✔ 404 link from http://developer.sheerid.com/concepts#errors #149 @done(19-06-29 19:55) @project(issues)
   ✔ new issue- update all procedural to 2nd person @done(19-04-30 06:59) @project(parking lot)
   ✔ reporting section:format tables better (maybe just bullets), provide details on each data point @done(19-04-30 06:59) @project(issues)
