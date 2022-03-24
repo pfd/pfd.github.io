@@ -1,0 +1,50 @@
+---
+title: Cool API Reference
+layout: api
+---
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    {% if site.google_analytics and jekyll.environment == 'production'  %}
+      {% include google-tag-head.html %}
+    {% endif %}
+    <title>SheerID REST API Reference</title>
+    <!-- needed for adaptive design -->
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:300,400,700|Roboto:300,400,700" rel="stylesheet">
+
+    <!--
+    ReDoc doesn't change outer page styles
+    -->
+    <style>
+      body {
+        margin: 0;
+        padding: 0;
+      }
+      .menu-content {
+        top: 0px; 
+      }
+    </style>
+  </head>
+  <body>
+    {% if site.google_analytics and jekyll.environment == 'production'  %}
+      {% include google-tag-body.html %}
+    {% endif %}
+    <div id="redoc-container">
+    <script src="https://cdn.jsdelivr.net/npm/redoc@v2.0.0-rc.23/bundles/redoc.standalone.js"> </script>
+    <script>
+    Redoc.init('/swagger.yaml', {
+      scrollYOffset: 0,
+      noAutoAuth: true,
+      pathInMiddlePanel: true,
+      requiredPropsFirst: true,
+      hideHostname: true,
+      hideDownloadButton: false,
+      theme: {typography: {fontSize: '14px'}, logo: {maxWidth: '100%', gutter: '20px 30px 14px 30px'}, menu: {backgroundColor: '#fafafa', level1Items: {textTransform: 'uppercase'}}},
+      }, 
+      document.getElementById('redoc-container'));
+  </script>
+  </div>
+  </body>
+</html>

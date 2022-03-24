@@ -1,0 +1,21 @@
+- name: 'sid-inline-iframe'
+  element: '&lt;iframe&gt;'
+  description: The element created of any verification rendered as an inline iframe. It is the &lt;iframe&gt; that it is being rendered.
+- name: 'sid-modal__wrapper'
+  element: '&lt;div&gt;'
+  description: The wrapper of any verification rendered as a modal. It wraps the iframe and the close button.
+- name: 'sid-modal__iframe'
+  element: '&lt;iframe&gt;'
+  description: It is the &lt;iframe&gt; that it is being created to render a verification. It is a child of the modal wrapper.
+- name: 'sid-modal__overlay'
+  element: '&lt;div&gt;'
+  description: The overlay that is shown when the modal is open.
+- name: 'sid-modal__close-button'
+  element: '&lt;a&gt;'
+  description: The element that will trigger closing the modal. As a default, it will only display the icon unless a <code>closeButtonText</code> parameter is provided through configuration.
+- name: 'sid-modal__close-text'
+  element: '&lt;span&gt;'
+  description: If provided by configuration, the text for the close button.
+- name: 'sid-modal__close-icon'
+  element: '&lt;div&gt;'
+  description: The elements that display the close icon. The icon can be customized changing the <code>background-image</code> property.

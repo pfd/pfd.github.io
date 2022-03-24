@@ -1,0 +1,48 @@
+{% for method in site.data.methods %}
+<div class="table-wrapper">
+<table class="grid" style="width: 100%">
+    <style>
+        caption {
+            caption-side: top;
+        }
+        th, td {
+            font-size: 12px !important;
+            min-width: 120px;
+            padding-top: 0.5rem;
+            padding-right: 0.75rem;
+            padding-bottom: 0.5rem;
+            padding-left: 0.75rem;
+            background-color: white;
+            border-bottom: 1px solid rgba(238, 235, 238, 0.5);
+            border-left: 1px solid #eeebee;
+        }
+    </style>
+    <h3 id="{{ method.name | slugify }}">{{ method.name }}</h3>
+    <caption>{{ method.description }} (<a href="{{ site.baseurl }}/{{ method.url }}" target="_blank">API Reference</a>) </caption>
+    <thead>
+        <tr class="header">
+            <th>Field</th>
+            <th>Required?</th>
+            <th>Description</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for field in method.fields %}
+        <tr>
+            <td><code>{{ field.name }}</code></td>
+            {% if field.required == true %}
+            <td>Yes</td>
+            {% elsif field.required == false %}
+            <td>No</td>
+            {% endif %}
+            {% if field.link %}
+            <td>{{field.description}}  <em><b>Learn more</b></em>: <a href="{{ site.baseurl }}/{{ field.link}}"><em>{{ field.label }}</em></a></td>
+            {% elsif field.link == null %}
+            <td>{{ field.description }}</td>
+            {% endif %}
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+</div>
+{% endfor %}

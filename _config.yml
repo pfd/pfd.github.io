@@ -1,0 +1,156 @@
+# Welcome to Jekyll!
+#
+# This config file is meant for settings that affect your whole blog, values
+# which you are expected to set up once and rarely edit after that. If you find
+# yourself editing this file very often, consider using Jekyll's data files
+# feature for the data you need to update frequently.
+#
+# For technical reasons, this file is *NOT* reloaded automatically when you use
+# 'bundle exec jekyll serve'. If you change this file, please restart the server process.
+
+# Site settings
+# These are used to personalize your new site. If you look in the HTML files,
+# you will see them accessed via {{ site.title }}, {{ site.email }}, and so on.
+# You can create any custom variable you would like, and they will be accessible
+# in the templates via {{ site.myvariable }}.
+title: SheerID Developer Center
+email: productsupport@sheerid.com
+description: >- # this means to ignore newlines until "baseurl:"
+  Developer resources to connect with the SheerID digital verification
+  platform. Add instant verification of your gated offers. You choose who
+  qualifies. We enforce your requirements.
+baseurl: "" # the subpath of your site, e.g. /blog
+url: "https://developer.sheerid.com" # the base hostname & protocol for your site, e.g. http://example.com
+
+permalink: pretty
+livereload: false
+
+collections:
+  # this is named with an underscore because it needs to be processed
+  # before the collections that render the actual pages.
+  # jekyll is processing in alpha order...
+  _glossary:
+  posts:
+    permalink: "/news/:year/:month/:day/:title/"
+    output: true
+
+
+# Aux links for the upper right navigation
+aux_links:
+  "Home":
+    - "/"
+  "REST API Reference":
+    - "../../rest-api"
+  "JS API Reference":
+    - "../../jslib-api"
+
+exclude: ["node_modules/", "*.gemspec", "*.gem", "Gemfile", "Gemfile.lock", "package.json", "package-lock.json",  "script/", "LICENSE.txt", "lib/", "bin/", "README.md", "Rakefile", "publish_script"]
+
+twitter_username: sheerid
+github_username:  sheerid
+search_enabled: true
+
+# Build settings
+markdown: kramdown
+kramdown:
+  parse_block_html: true
+
+# theme: just-the-docs
+plugins:
+  - jekyll-feed
+  - jekyll-toc
+  - jekyll-avatar
+
+repo: "https://github.com/sheerid"
+# Exclude from processing.
+# The following items will not be processed, by default. Create a custom list
+# to override the default setting.
+# exclude:
+#   - Gemfile
+#   - Gemfile.lock
+#   - node_modules
+#   - vendor/bundle/
+#   - vendor/cache/
+#   - vendor/gems/
+#   - vendor/ruby/
+
+defaults:
+  -
+    scope:
+      path: ""
+    values:
+      layout: default
+  -
+    scope:
+      type: "documentation"
+    values:
+      _hide_content: true
+  -
+    scope:
+      type: "api"
+    values:
+      _hide_content: true
+  -
+    scope:
+      path: ""
+    values:
+      side-bar-file: "default-side-bar.html"
+
+# -----------
+# CloudCannon
+
+types:
+  - get
+  - put
+  - delete
+  - post
+
+languages:
+  bash: Bash
+  c: C
+  css: CSS
+  html: HTML
+  java: Java
+  javascript: JavaScript
+  json: JSON
+  php: PHP
+  python: Python
+  ruby: Ruby
+
+_options:
+  content_markdown:
+    format: p h4 h5 h6
+    bold: true
+    italic: true
+    link: true
+    bulletedlist: true
+    numberedlist: true
+    image: true
+    table: true
+    styles: /css/editor.css
+
+algolia:
+  application_id: UOHZ2NO6JA
+  index_name: sheerID
+  nodes_to_index: 'p,li,h1,h2,h3'
+  search_only_api_key: 99056eccfa8a73d0b198c947886c0076
+  files_to_exclude:
+    - news.html
+    - _posts/2019-09-18-release.md
+
+toc:
+  min_level:        2
+  max_level:        3
+  no_toc_section_class:
+    - "bd-callout"
+    - "bd-example"
+  list_class: toc-content-style
+  sublist_class: toc-sublist-style
+
+# Google Analytics
+google_analytics: GTM-NVPPBBQ
+
+future: true
+
+exclude:
+  - robots.txt

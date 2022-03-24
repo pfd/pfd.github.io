@@ -1,0 +1,43 @@
+- name: overMainImage
+  title: '# SheerID<br/>Developer Center'
+  text: 'Connect with the SheerID digital verification platform to add instant verification of your exclusive offers. You choose who qualifies. We enforce your requirements.'
+  class: 'title-over-text'
+  textClass: 'title-over-text-description'
+  buttons:
+  - name: 'get started'
+    href: '/getting-started'
+  - name: 'learn more'
+    href: '/introduction'
+- name: whatWeOffer
+  title: '## What We Offer'
+  class: 'title-with-image'
+  text: 'An instant verification engine that accesses hundreds of authoritative sources in real-time. Implement gated offers by connecting your website, mobile app or POS to SheerID to verify customer eligibility in 10 high-value consumer segments, such as students and military members.'
+  textClass: 'title-text-description'
+  image: 'verifyYourCredentials'
+  imageClass: 'next-to-content-img'
+  startWithImage: true
+  buttons:
+  - name: 'learn more'
+    href: '/introduction'
+- name: howItWorks
+  title: '## How it Works'
+  class: 'title-with-image'
+  text: 'Add SheerID verification to your e-commerce workflow to initiate eligibility checks based on your program’s criteria. Customers follow simple steps to supply the data required to unlock your exclusive offer.  We check their data and reply with a positive result or another option to prove their eligibility.'
+  textClass: 'title-text-description'
+  image: 'How it works'
+  imageClass: 'next-to-content-img'
+  startWithImage: false
+  buttons:
+  - name: 'learn more'
+    href: '/concepts'
+- name: howToIntegrate
+  title: '## How to Integrate'
+  class: 'title-with-image'
+  text: 'We offer several options to connect your software to the SheerID verification platform. Simply drop our form into your site to get started right away. Choose our JavaScript library for additional customization of your user experience or the REST API for mobile apps and more complex web experiences. '
+  textClass: 'title-text-description'
+  image: 'programDetails'
+  imageClass: 'next-to-content-img'
+  startWithImage: true
+  buttons:
+  - name: 'learn more'
+    href: '/getting-started'

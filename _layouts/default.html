@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+
+<html lang="en-us">
+  {% include head.html %}
+  {% if site.google_analytics and jekyll.environment == 'production'  %}
+  {% include google-tag-body.html %}
+  {% endif %}
+  <div class="page-wrap">
+    {% include docs-navbar.html %}
+    {% include {{ page.side-bar-file }} %}
+    {% if page.toc %}
+    <nav class="right-side-bar" id="nava">
+      <div class="toc-title">table of contents</div>
+      {{ content | toc_only }}
+    </nav>
+    {% endif %}
+  </div>
+  <div class="main-content-wrap" id="maincontent">
+    <div class="main-content">
+      <div class="page-content">
+        {% if jekyll.environment == "development" %}
+        {% include warning.html content="This is a development preview." %}
+        {% endif %}
+        {{ content }}
+        <br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
+        <br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
+        <br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
+      </div>
+    </div>
+  </div>
+  {% include footer.html jtd=true %}
+  {% include lightbox.html %}
+  {% include anchor-js.html %}
+  <script type="text/javascript" src="/assets/js/replace-jslib-version-snippet.js"></script>
+  <script type="text/javascript" src="/assets/js/scrollSpy.js"></script>
+  <script> $("#nava").scrollspy({ replaceState: true, offset: -25  }); </script>
+  {% include algoliaSearch.html %}
+</html>

@@ -1,0 +1,210 @@
+//
+// The basic two column layout
+//
+
+.page-wrap {
+  @include mq(md) {
+    top: 0;
+    left: 0;
+    display: flex;
+    width: 100%;
+    overflow-x: hidden;
+    overflow-y: hidden;
+    /* This is not cool. But it is a work around Algolia search content to be displayed and not cut*/
+    height: 60rem;
+  }
+}
+
+.side-bar {
+  z-index: 10;
+  display: flex;
+  flex-wrap: wrap;
+  padding-top: $gutter-spacing-sm;
+  padding-bottom: $gutter-spacing-sm;
+  background-color: $sidebar-color;
+  top: 4.6rem;
+
+  @include mq(md) {
+    flex-wrap: nowrap;
+    position: absolute;
+    width: $nav-width + 16px;
+    height: 100%;
+    padding-top: $gutter-spacing * 2;
+    padding-bottom: 0;
+    flex-direction: column;
+    align-items: flex-end;
+  }
+
+  @include mq(lg) {
+    width: calc((100% - #{$nav-width + $content-width + $right-nav-width}) / 2 + #{$nav-width});
+    min-width: $nav-width;
+  }
+}
+
+.right-side-bar {
+  flex-wrap: wrap;
+  top: 9rem;
+  z-index: 1;
+
+  @include mq(md) {
+    display: none;
+  }
+
+  @include mq(lg) {
+    border-left: 6px solid #dbe0e4;;
+    display: flex;
+    position: fixed;
+    margin-left: calc((100% - #{$nav-width + $content-width + $right-nav-width}) / 2 + #{$content-width + $right-nav-width});
+  }
+}
+
+.right-side-bar ul li {
+  display: table;
+}
+
+.right-side-bar ul li a:link,
+.right-side-bar ul li a:visited,
+.right-side-bar ul li a:active,
+.right-side-bar ul li a:hover,
+.right-side-bar ul li a:focus {
+  color: #333;
+  text-decoration: none;
+  background: none;
+}
+
+.right-side-bar ul li.active a {
+  color: black;
+  font-weight: bold;
+}
+
+.toc-content-style {
+  padding-inline-start: 10px;
+}
+
+.main-content-wrap {
+  @include mq(md) {
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    min-height: 600px;
+    -webkit-overflow-scrolling: touch;
+    overflow-x: hidden;
+    overflow-y: scroll;
+    position: absolute;
+    top: 4rem;
+  }
+}
+
+.main-content {
+  padding-top: $gutter-spacing-sm;
+  @include container;
+
+  @include mq(md) {
+    position: relative;
+    max-width: $content-width;
+    padding-top: $gutter-spacing;
+    padding-bottom: $gutter-spacing;
+    padding-left: $gutter-spacing * 1.5;
+    margin-left: $nav-width;
+  }
+
+  @include mq(lg) {
+    padding-left: $gutter-spacing;
+    margin-left: calc((100% - #{$nav-width + $content-width + $right-nav-width}) / 2 + #{$nav-width});
+  }
+}
+
+.js-main-content:focus {
+  outline: none;
+}
+
+.page-header {
+  background-color: $sidebar-color;
+
+  @include mq(md) {
+    background-color: $body-background-color;
+  }
+
+  .main-content {
+    padding-top: 0;
+
+    @include mq(md) {
+      display: flex;
+      justify-content: flex-end;
+      height: 60px;
+      padding-top: $sp-4;
+      padding-bottom: $sp-4;
+      border-bottom: $border $border-color;
+    }
+  }
+}
+
+.navigation,
+.right-navigation,
+.site-title,
+.site-footer {
+
+  @include container;
+
+  width: 100%;
+
+  @include mq(lg) {
+    width: $nav-width + 32px;
+  }
+}
+
+.navigation {
+  @include mq(md) {
+    padding-top: $sp-8;
+    overflow-y: auto;
+    flex: 1 1 auto;
+  }
+}
+
+// stylelint-disable selector-no-type
+body {
+  position: relative;
+  padding-bottom: $sp-10;
+
+  @include mq(md) {
+    position: static;
+    padding-bottom: 0;
+  }
+}
+// stylelint-enable selector-no-type
+
+.site-footer {
+  position: absolute;
+  bottom: 0;
+  padding-top: $sp-4;
+  padding-bottom: $sp-4;
+
+  @include mq(md) {
+    position: static;
+    align-self: flex-end;
+    justify-self: end;
+    background-color: $sidebar-color;
+  }
+}
+
+.toc-entry {
+  counter-increment: content-counter;
+  a {
+    &::before {
+      content: counter(content-counter);
+      margin-right: .5rem;
+      margin-left: .5rem;
+    }
+  }
+}
+
+.toc-sublist-style {
+  padding-inline-start: 1.7rem;
+  a {
+    &::before {
+      counter-increment: content-counter -1;
+      content: "";
+    }
+  }
+}

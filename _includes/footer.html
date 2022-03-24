@@ -1,0 +1,27 @@
+
+<footer class="landing-footer{% if include.jtd %} landing-footer-jtd{% endif %}">
+{% for item in site.data.landingFooterTitles %}
+<a class="main-menu-item footer-item" href="{{ item.path }}" target="_blank">{{ item.name }}</a>
+{% endfor %}
+<div class="left-items-footer">
+    <div class="mobile-footer-items" >
+    {% for item in site.data.landingFooterTitles %}
+    {% if item.name != '© 2021 SheerID Inc.' %}
+      <div class="mobile-foot-item-wrapper">
+        <a class="mobile-foot-item" href="{{ item.path }}" target="_blank">{{ item.name }}</a>
+      </div>
+    {% endif %}
+    {% endfor %}
+    </div>
+    <a class="main-logo footer-logo" href="https://www.sheerid.com/" target="_blank">
+      {%- include icons/logo.svg -%}
+    </a>
+    {% for item in site.data.landingFooterTitles %}
+    {% if item.name == '© 2021 SheerID Inc.' %}
+    <div>
+      <a class="mobile-only mobile-foot-item" href="{{ item.path }}" target="_blank">{{ item.name }}</a>
+    </div>
+    {% endif %}
+    {% endfor %}
+</div>
+</footer>

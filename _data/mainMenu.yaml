@@ -1,0 +1,9 @@
+- name: 'REST API reference'
+  path: '/rest-api'
+- name: 'JS library reference'
+  path: '/jslib-api'
+- name: 'tutorials'
+  path: '/tutorials'
+- name: 'Release Notes'
+  path: '/news'
+  

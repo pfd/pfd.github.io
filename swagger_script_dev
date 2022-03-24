@@ -1,0 +1,15 @@
+#!/bin/bash
+
+# Use this script to verify that preview changes are rendering properly in redoc.
+
+# Collect the latest preview spec
+
+curl -s "https://trial-preview.sheerid.com/rest/v2/swagger.yaml" > swagger-preview.yaml
+
+# Merge the logo and description info 
+
+yaml-merge swagger-preview.yaml info.yaml > swagger.yaml
+
+# Clean up
+
+rm swagger-preview.yaml

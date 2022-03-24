@@ -1,0 +1,39 @@
+<div class="table-wrapper">
+<table class="grid" style="width: 100%">
+    <style>
+        caption {
+            caption-side: top;
+        }
+        th, td {
+            font-size: 12px !important;
+            min-width: 125px;
+            padding-top: 0.5rem;
+            padding-right: 0.75rem;
+            padding-bottom: 0.5rem;
+            padding-left: 0.75rem;
+            background-color: white;
+            border-bottom: 1px solid rgba(238, 235, 238, 0.5);
+            border-left: 1px solid #eeebee;
+        }
+        .css-selector {
+            min-width: 175px;
+        }
+    </style>
+    <thead>
+        <tr class="header">
+            <th>Class name</th>
+            <th>Element</th>
+            <th>Description</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for configuration in site.data.iframeCssSelectors %}
+        <tr>
+            <td class="css-selector"><code>{{ configuration.name }}</code></td>
+            <td>{{ configuration.element }}</td>
+            <td>{{ configuration.description }}</td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+</div>

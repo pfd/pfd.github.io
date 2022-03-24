@@ -1,0 +1,15 @@
+---
+layout: news
+title: Upcoming Releases
+permalink: /news
+author: all
+toc: true
+nav_order: 999
+description: SheerID posts release notes here on the day of each biweekly platform release.
+---
+
+{% for post in site.posts %}
+  {% include news_item.html %}
+{% endfor %}
+
+

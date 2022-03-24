@@ -1,0 +1,55 @@
+<header class="flex-row">
+  <div class="left-items">
+    <div id="menuToggle">
+        <input type="checkbox" id="mobileMenuIcon"/>
+
+        <!-- Burger Menu made by spans only and CSS style-->
+        <span></span>
+        <span></span>
+        <span></span>
+
+        <ul id="menu">
+          {% for item in site.data.mainMenu %}
+          <a class="link-mobile-menu" href="{{ item.path }}" >
+            <li>{{ item.name }}</li>
+            <div class="arrow next"></div>
+          </a>
+          {% endfor %}
+          <div id="search-mobile" class="search-mobile">
+              <input type="text" class="search-input" placeholder="SEARCH" aria-label="Search" autocomplete="off" id="algoliaSearch">
+          </div>
+        </ul>
+    </div>
+    <a class="main-logo" href="/">
+      {%- include icons/logo.svg -%}
+    </a>
+    {% for item in site.data.mainMenu %}
+      {% if item.name == 'REST API reference' %}
+      <a class="main-menu-item" href="{{ item.path }}" target = "_blank">{{ item.name }}</a>
+      {% else %}
+      <a class="main-menu-item" href="{{ item.path }}">{{ item.name }}</a>
+      {% endif %}
+    {% endfor %}
+  </div>
+
+  <div class="right-items">
+    {% if include.createAccount %}
+    <a class="create-account" href="https://my.sheerid.com/authentication/index.html?authevt=register" target="_blank">
+      create account
+    </a>
+    {% endif %}
+    <div class="search">
+      <div class="search-input-wrap">
+        <input type="text" class="search-input hide" placeholder="Search" aria-label="Search" autocomplete="off" id="algoliaSearchDesktop">
+        <img id="searchIcon" class="search-icon" src="https://23s6x22phk5q33910hihb4ku-wpengine.netdna-ssl.com/wp-content/uploads/2018/12/MagGlass_icon_45deg.png">
+      </div>
+    </div>
+    <div class="js-search-results search-results-wrap"></div>
+  </div>
+  <script>
+    $('.menu-version').on('click', function(){
+	    $('.version-container').toggle();
+    })
+  </script>
+  <script src="/assets/js/mobileMenu.js" ></script>
+</header>

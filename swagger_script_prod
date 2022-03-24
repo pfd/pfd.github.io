@@ -1,0 +1,18 @@
+#!/bin/bash
+
+# This script gets the latest prod swagger spec and merges in any additional detail from info.yaml. Run this script as the last step prior to running the publish script. Eventually we may want to add this step to the publish script but we should keep it separate for now as we figure out how best to use redoc.
+
+# Collect the latest prod swagger spec
+
+curl -s "https://services.sheerid.com/rest/v2/swagger.yaml" > swagger-prod.yaml
+
+# Use this curl when there is no merge
+# curl -s "https://services.sheerid.com/rest/v2/swagger.yaml" > swagger.yaml
+
+# Merge the local swagger changes
+
+yaml-merge swagger-prod.yaml swagger-merge.yaml > swagger.yaml
+
+# Clean up
+
+rm swagger-prod.yaml

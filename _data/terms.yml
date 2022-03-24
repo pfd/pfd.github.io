@@ -1,0 +1,66 @@
+- label: Request ID
+  definition: "A unique identifier for the request." 
+- label: Request Timestamp
+  definition: "The date and time of the original request or its most recent revision."
+- label: Account ID
+  definition: "An identifier for the account that submitted the request."
+- label: Person ID
+  definition: "A unique string which represents an individual’s identifying data. Can be used to recognize duplicate submissions with the same data."
+- label: User ID
+  definition: An identifier for the user that submitted the request. 
+- label: Username 
+  definition: The username of the user that submitted the request.
+- label: flows
+  definition: "The series of steps you take to complete a verification" 
+- label: document upload
+  definition: "A step in the verification flow that you proceed to if an instant verification fails." 
+- label: API token
+  definition: "Certain requests use a Bearer Token for authentication. Retrieve your access token from [MySheerID](https://my.sheerid.com){:target='_blank '} under Settings »» Access Tokens." 
+- label: verificationId
+  definition: "Unique identifier for the ongoing verification." 
+- label: submissionUrl
+  definition: "The URL where you will submit the required information for the the next step in the verification, e.g., `docUpload`." 
+- label: currentStep
+  definition: "The current step in the verification." 
+- label: errorIds
+  definition: "If applicable, an array of error IDs indicating a problem with the verification." 
+- label: segment
+  definition: "The primary segment of the program, e.g., student, military. This value does not vary but is returned for convenience." 
+- label: subSegment
+  definition: "The subsegment for the current verification, e.g., `activeDuty` is a possible `subsegment` in a `military` verification. This varies by the choice a user makes during a verification, but will always be one of the available `subSegment`s configured for your program." 
+- label: statusUrl
+  definition: "The URL to poll to determine the result of the document review."
+
+- label: Result
+  multi: true
+  option1: "true" 
+  definition1: if the individual has been matched in at least one Verification Source and currently has at least one of the requested affiliation types.
+  option2: "false" 
+  definition2: if the individual has been matched in at least one Verification Source and does not currently have at least one of the requested affiliation types.
+
+- label: Errors 
+  definition: A list of errors encountered during the verification process for this request. 
+- label: OrganizationEntity ID
+  definition: The identifier for the requested organization.
+- label: Organization Name
+  definition: The name of the requested organization.
+- label: Organization State
+  definition: The State(location)of the requested organization
+- label: Organization Country
+  definition: The Country(location)of the requested organization
+- label: OrganizationEntity Type
+  definition: The type of organization represented by the request.
+- label: Verification Types 
+  definition: The type(s) of verification used to obtain a verification result.
+- label: Requested Affiliation Types
+  definition: The types of affiliations that the request was attempting to verify.
+- label: Confirmed Affiliation Types
+  definition: The types of affiliations that the individual was determined to have.
+- label: Data Updated Date
+  definition: The date the affiliation information was most recently updated by the data source.
+- label: Period Begin Date
+  definition: The start of the most recent affiliation status period.
+- label: Period End Date
+  definition: The end of the most recent affiliation status period.
+
+

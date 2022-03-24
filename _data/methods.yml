@@ -1,0 +1,500 @@
+- name: Student
+  description: Submit data for a student verification.
+  url: rest-api#operation/submitStudentVerification
+  fields:
+  - name: firstName
+    description: The first name of the person being verified.
+    required: true
+    type: string
+  - name: lastName
+    description: The last name of the person being verified.
+    required: true
+    type: string
+  - name: email
+    description: The email address of the person being verified.
+    required: true
+    type: string
+  - name: birthDate
+    description: "The date of birth of the person being verified (format YYYY-MM-DD). Date must be greater than 1900-01-01."
+    required: true
+    type: string
+  - name: organization
+    description: An organization that can be used for instant verification of various segments (Student, Teacher, Military, etc.).
+    required: true
+    type: object
+  - name: ipAddressExtended
+    description: The end-user's public IP address. This only needs to be provided in situations where the HTTP requests do not come directly from the end-user.
+    required: false
+    type: string
+  - name: phoneNumber
+    description: The phone number used for SMS messages.
+    required: false
+    type: string
+  - name: locale
+    description: The locale chosen by the user.
+    required: false
+    type: string
+  - name: metadata
+    description: A collection of custom metadata to be stored with the verification.
+    required: false
+    type: object
+    link: manage-programs/program-settings#metadata-options
+    label: Metadata Options
+
+
+- name: Active Military
+  description: The active military and branch of service data collected from the user to be verified
+  url: rest-api#operation/submitActiveMilitaryVerification
+  fields:
+  - name: firstName
+    description: The first name of the person being verified.
+    required: true
+    type: string
+  - name: lastName
+    description: The last name of the person being verified.
+    required: true
+    type: string
+  - name: email
+    description: The email address of the person being verified.
+    required: true
+    type: string
+  - name: birthDate
+    description: The date of birth of the person being verified (format YYYY-MM-DD). Date must be greater than 1900-01-01.
+    required: true
+    type: string
+  - name: organization
+    description: An organization that can be used for instant verification of various segments (Student, Teacher, Military, etc.).
+    required: true
+    type: object
+  - name: phoneNumber
+    description: The phone number used for SMS messages.
+    required: false
+    type: string
+  - name: locale
+    description: The locale chosen by the user.
+    required: false
+    type: string
+  - name: ipAddressExtended
+    description: The end-user's public IP address. This only needs to be provided in situations where the HTTP requests do not come directly from the end-user.
+    required: false
+    type: string
+  - name: metadata
+    description: A collection of custom metadata to be stored with the verification.
+    required: false
+    type: object
+    link: manage-programs/program-settings#metadata-options
+    label: Metadata Options
+
+
+- name: Inactive Military
+  description: The inactive duty and branch of service data collected from the user to be verified
+  url: rest-api#operation/submitInactiveMilitaryVerification
+  fields:
+  - name: firstName
+    description: The first name of the person being verified.
+    required: true
+    type: string
+  - name: lastName
+    description: The last name of the person being verified.
+    required: true
+    type: string
+  - name: email
+    description: The email address of the person being verified.
+    required: true
+    type: string
+  - name: birthDate
+    description: The date of birth of the person being verified (format YYYY-MM-DD). Date must be greater than 1900-01-01.
+    required: true
+    type: string
+  - name: organization
+    description: An organization that can be used for instant verification of various segments (Student, Teacher, Military, etc.)
+    required: true
+    type: object
+  - name: dischargeDate
+    description: The date the person being verified was discharged from the military.
+    required: true
+    type: string
+  - name: phoneNumber
+    description: The phone number used for SMS messages.
+    required: false
+    type: string
+  - name: locale
+    description: The locale chosen by the user.
+    required: false
+    type: string
+  - name: ipAddressExtended
+    description: The end-user's public IP address. This only needs to be provided in situations where the HTTP requests do not come directly from the end-user.
+    required: false
+    type: string
+  - name: metadata
+    description: A collection of custom metadata to be stored with the verification.
+    required: false
+    type: object
+    link: manage-programs/program-settings#metadata-options
+    label: Metadata Options
+
+- name: Age
+  description: The age data collected from the user to be verified.
+  url: rest-api#operation/submitAgeVerification
+  fields:
+  - name: firstName
+    description: The first name of the person being verified.
+    required: true
+    type: string
+  - name: lastName
+    description: The last name of the person being verified.
+    required: true
+    type: string
+  - name: email
+    description: The email address of the person being verified.
+    required: true
+    type: string
+  - name: birthDate
+    description: "The date of birth of the person being verified (format YYYY-MM-DD). Date must be greater than 1900-01-01."
+    required: true
+    type: string
+  - name: postalCode
+    description: The postal code for the person being verified. Required if country == 'US'
+    required: false
+    type: string
+  - name: phoneNumber
+    description: The phone number used for SMS messages. Required if country != 'US'
+    required: false
+    type: string
+  - name: country
+    description: The country code of the person being verified. Defaults to 'US'
+    required: false
+    type: string
+  - name: locale
+    description: The locale chosen by the user.
+    required: false
+    type: string
+  - name: ipAddressExtended
+    description: The end-user's public IP address. This only needs to be provided in situations where the HTTP requests do not come directly from the end-user.
+    required: false
+    type: string
+  - name: metadata
+    description: A collection of custom metadata to be stored with the verification.
+    required: false
+    type: object
+    link: manage-programs/program-settings#metadata-options
+    label: Metadata Options
+
+- name: Teacher
+  description: A teacher to be verified.
+  url: rest-api#operation/submitTeacherVerification
+  fields:
+  - name: firstName
+    description: The first name of the person being verified.
+    required: true
+    type: string
+  - name: lastName
+    description: The last name of the person being verified.
+    required: true
+    type: string
+  - name: email
+    description: The email address of the person being verified.
+    required: true
+    type: string
+  - name: organization
+    description: An organization that can be used for instant verification of various segments (Student, Teacher, Military, etc.).
+    required: true
+    type: object
+  - name: postalCode
+    description: The postal code for the person being verified. Provide when open org is submitted, i.e. organization id = 0
+    type: string
+    required: false
+  - name: phoneNumber
+    description: The phone number used for SMS messages.
+    required: false
+    type: string
+  - name: locale
+    description: The locale chosen by the user.
+    required: false
+    type: string
+  - name: ipAddressExtended
+    description: The end-user's public IP address. This only needs to be provided in situations where the HTTP requests do not come directly from the end-user.
+    required: false
+    type: string
+  - name: metadata
+    description: A collection of custom metadata to be stored with the verification.
+    required: false
+    type: object
+    link: manage-programs/program-settings#metadata-options
+    label: Metadata Options
+
+- name: First Responder
+  description: A first responder to be verified.
+  url: rest-api#operation/submitFirstResponderVerification
+  fields:
+  - name: firstName
+    description: The first name of the person being verified.
+    required: true
+    type: string
+  - name: lastName
+    description: The last name of the person being verified.
+    required: true
+    type: string
+  - name: email
+    description: The email address of the person being verified.
+    required: true
+    type: string
+  - name: organization
+    description: An organization that can be used for instant verification of various segments (Student, Teacher, Military, etc.).
+    required: true
+    type: object
+  - name: statuses
+    description: "List of first responder statuses. Possible values: 'POLICE', 'EMT', 'FIREFIGHTER'."
+    required: true
+    type: array
+  - name: birthDate
+    description: "The date of birth of the person being verified (format YYYY-MM-DD). Date must be greater than 1900-01-01."
+    required: false
+    type: string
+  - name: phoneNumber
+    description: The phone number used for SMS messages.
+    required: false
+    type: string
+  - name: locale
+    description: The locale chosen by the user.
+    required: false
+    type: string
+  - name: ipAddressExtended
+    description: The end-user's public IP address. This only needs to be provided in situations where the HTTP requests do not come directly from the end-user.
+    required: false
+    type: string
+  - name: metadata
+    description: A collection of custom metadata to be stored with the verification.
+    required: false
+    type: object
+    link: manage-programs/program-settings#metadata-options
+    label: Metadata Options
+  - name: postalCode
+    description: The postal code for the person being verified. Provide when open org is submitted, i.e. organization id = 0
+    required: true
+    type: string
+
+
+- name: Medical Professional
+  description: A medical professional to be verified.
+  url: rest-api#operation/submitMedicalProfessionalVerification
+  fields:
+  - name: firstName
+    description: The first name of the person being verified.
+    required: true
+    type: string
+  - name: lastName
+    description: The last name of the person being verified.
+    required: true
+    type: string
+  - name: email
+    description: The email address of the person being verified.
+    required: true
+    type: string
+  - name: birthDate
+    description: "The date of birth of the person being verified (format YYYY-MM-DD). Date must be greater than 1900-01-01."
+    required: true
+    type: string
+  - name: postalCode
+    description: The postal code for the person being verified.
+    required: true
+    type: string
+  - name: organization
+    description: An organization that can be used for instant verification of various segments (Student, Teacher, Military, etc.).
+    required: true
+    type: object
+  - name: statuses
+    description: "List of medical professional statuses. A single value will be interpreted as a list with one entry. Possible values: 'NURSE', 'DOCTOR', 'OTHER_HEALTH_WORKER' "
+    required: true
+    type: array
+  - name: phoneNumber
+    description: The phone number used for SMS messages.
+    required: false
+    type: string
+  - name: locale
+    description: The locale chosen by the user.
+    required: false
+    type: string
+  - name: ipAddressExtended
+    description: The end-user's public IP address. This only needs to be provided in situations where the HTTP requests do not come directly from the end-user.
+    required: false
+    type: string
+  - name: metadata
+    description: A collection of custom metadata to be stored with the verification.
+    required: false
+    type: object
+    link: manage-programs/program-settings#metadata-options
+    label: Metadata Options
+
+- name: Employment
+  description: An employee to be verified.
+  url: rest-api#operation/submitEmployeeVerification
+  fields:
+  - name: firstName
+    description: The first name of the person being verified.
+    required: true
+    type: string
+  - name: lastName
+    description: The last name of the person being verified.
+    required: true
+    type: string
+  - name: email
+    description: The email address of the person being verified.
+    required: true
+    type: string
+  - name: address1
+    description: The street address for the person being verified.
+    required: true
+    type: string
+  - name: city
+    description: The city for the person being verified.
+    required: true
+    type: string
+  - name: state
+    description: The 2-digit state code for the person being verified.
+    required: true
+    type: string
+  - name: postalCode
+    description: The postal code for the person being verified.
+    required: true
+    type: string
+  - name: organization
+    description: An organization that can be used for instant verification of various segments (Student, Teacher, Military, etc.).
+    required: true
+    type: object
+  - name: phoneNumber
+    description: The phone number used for SMS messages.
+    required: false
+    type: string
+  - name: locale
+    description: The locale chosen by the user.
+    required: false
+    type: string
+  - name: deviceFingerprintHash
+    description: The device fingerprint collected for the person being verified.
+    required: false
+    type: string
+  - name: ipAddressExtended
+    description: The end-user's public IP address. This only needs to be provided in situations where the HTTP requests do not come directly from the end-user.
+    required: false
+    type: string
+  - name: metadata
+    description: A collection of custom metadata to be stored with the verification.
+    required: false
+    type: object
+    link: manage-programs/program-settings#metadata-options
+    label: Metadata Options
+
+- name: Membership
+  description: A member to be verified.
+  url: rest-api#operation/submitMemberVerification
+  fields:
+  - name: firstName
+    description: The first name of the person being verified.
+    required: true
+    type: string
+  - name: lastName
+    description: The last name of the person being verified.
+    required: true
+    type: string
+  - name: email
+    description: The email address of the person being verified.
+    required: true
+    type: string
+  - name: organization
+    description: An organization that can be used for instant verification of various segments (Student, Teacher, Military, etc.).
+    required: true
+    type: object
+  - name: deviceFingerprintHash
+    description: The device fingerprint collected for the person being verified.
+    required: false
+    type: string
+  - name: birthDate
+    description: "The date of birth of the person being verified (format YYYY-MM-DD). Date must be greater than 1900-01-01."
+    required: false
+    type: string
+  - name: memberId
+    description: The unique member ID number for the person being verified.
+    required: false
+    type: string
+  - name: address1
+    description: The street address for the person being verified.
+    required: false
+    type: string
+  - name: city
+    description: The city for the person being verified.
+    required: false
+    type: string
+  - name: state
+    description: The 2-digit state code for the person being verified.
+    required: false
+    type: string
+  - name: postalCode
+    description: The postal code for the person being verified.
+    required: false
+    type: string
+  - name: phoneNumber
+    description: The phone number used for SMS messages.
+    required: false
+    type: string
+  - name: locale
+    description: The locale chosen by the user.
+    required: false
+    type: string
+  - name: ipAddressExtended
+    description: The end-user's public IP address. This only needs to be provided in situations where the HTTP requests do not come directly from the end-user.
+    required: false
+    type: string
+  - name: metadata
+    description: A collection of custom metadata to be stored with the verification.
+    required: false
+    type: object
+    link: manage-programs/program-settings#metadata-options
+    label: Metadata Options
+
+- name: Licensed Professional
+  description: A licensed professional to be verified.
+  url: rest-api#operation/submitLicensedProfessionalVerification
+  fields:
+  - name: firstName
+    description: The first name of the person being verified.
+    required: true
+    type: string
+  - name: lastName
+    description: The last name of the person being verified.
+    required: true
+    type: string
+  - name: email
+    description: The email address of the person being verified.
+    required: true
+    type: string
+  - name: birthDate
+    description: "The date of birth of the person being verified (format YYYY-MM-DD). Date must be greater than 1900-01-01."
+    required: true
+    type: string
+  - name: organization
+    description: An organization that can be used for instant verification of various segments (Student, Teacher, Military, etc.).
+    required: true
+    type: object
+  - name: deviceFingerprintHash
+    description: The device fingerprint collected for the person being verified.
+    required: false
+    type: string
+  - name: ipAddressExtended
+    description: The end-user's public IP address. This only needs to be provided in situations where the HTTP requests do not come directly from the end-user.
+    required: false
+    type: string
+  - name: phoneNumber
+    description: The phone number used for SMS messages.
+    required: false
+    type: string
+  - name: locale
+    description: The locale chosen by the user.
+    required: false
+    type: string
+  - name: metadata
+    description: A collection of custom metadata to be stored with the verification.
+    required: false
+    type: object
+    link: manage-programs/program-settings#metadata-options
+    label: Metadata Options

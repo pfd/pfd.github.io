@@ -1,0 +1,42 @@
+<div class="table-wrapper">
+<table class="grid" style="width: 100%">
+    <style>
+        caption {
+            caption-side: top;
+        }
+        th, td {
+            font-size: 12px !important;
+            min-width: 125px;
+            padding-top: 0.5rem;
+            padding-right: 0.75rem;
+            padding-bottom: 0.5rem;
+            padding-left: 0.75rem;
+            background-color: white;
+            border-bottom: 1px solid rgba(238, 235, 238, 0.5);
+            border-left: 1px solid #eeebee;
+        }
+    </style>
+    <thead>
+        <tr class="header">
+            <th>Key</th>
+            <th>Required?</th>
+            <th>Default value</th>
+            <th>Description</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for configuration in site.data.modalConfigurations %}
+        <tr>
+            <td><code>{{ configuration.name }}</code></td>
+            {% if configuration.required == true %}
+            <td>Yes</td>
+            {% elsif configuration.required == false %}
+            <td>No</td>
+            {% endif %}
+            <td>{{ configuration.default }}</td>
+            <td>{{ configuration.description }}</td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+</div>

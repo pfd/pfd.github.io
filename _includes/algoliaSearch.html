@@ -1,0 +1,29 @@
+<script src="https://cdn.jsdelivr.net/npm/docsearch.js@2/dist/cdn/docsearch.min.js"></script>
+<script>
+    jQuery(function($) {
+        $.searchState=false;
+        docsearch({
+            appId: '{{ site.algolia.application_id }}',
+            apiKey: '{{ site.algolia.search_only_api_key }}',
+            indexName: '{{ site.algolia.index_name }}',
+            inputSelector: '#algoliaSearch',
+            debug: false
+        });
+        docsearch({
+            appId: '{{ site.algolia.application_id }}',
+            apiKey: '{{ site.algolia.search_only_api_key }}',
+            indexName: '{{ site.algolia.index_name }}',
+            inputSelector: '#algoliaSearchDesktop',
+            debug: false
+        });
+        $('#searchIcon').click(function () {
+            if(!$.searchState) {
+                $('#algoliaSearchDesktop').removeClass("hide").focus();
+                $.searchState=true;
+            } else {
+                $('#algoliaSearchDesktop').addClass("hide");
+                $.searchState=false;
+            }
+        });
+    });
+</script>

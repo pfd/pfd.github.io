@@ -1,0 +1,39 @@
+# This file is used to merge OpenAPI properties into the local swagger source
+# when generating the API Reference. This file is only necessary when there are important public docs updates
+# that need to go live before they are merged into the public swagger spec. If you are
+# adding fields here, you should also create a ticket to get those fields
+# permanently added here, then remove them when they are live.
+
+
+
+# Example: add a new component
+
+# components:
+#   examples:
+#     collectMemberInfoInvalid:
+#       value:
+#         verificationId: '111111111111111111111111'
+#         currentStep: collectMemberPersonalInfo
+#         submissionUrl: /rest/v2/verification/111111111111111111111111/collectMemberPersonalInfo
+#         errorIds: [ 'invalidEmail' ]
+#         segment: member
+#         subSegment: null
+
+
+# Example: Change summaries and descriptions
+
+# paths:
+#   /info:
+#     get:
+#       summary: New information has come to light!
+#   /verification:
+#     post:
+#       summary: Begin verification flow
+#       description: Start the verification flow for a given program
+#   '/verification/{verificationId}/step/collectStudentPersonalInfo':
+#     post:
+#       summary: Submit student data
+#       description: Submit data for a student verification
+#   '/verification/program/{programId}/step/collectStudentPersonalInfo':
+#     post:
+#       summary: Submit student data against program

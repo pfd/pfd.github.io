@@ -1,0 +1,44 @@
+---
+layout: default
+has_children: false
+permalink: /jslib-api
+nav_exclude: true
+side-bar-file: blank.html
+---
+
+{% comment %}
+NOTE: The associated JSAPI files loaded in the iframe are generated from pangaea/sheerid-web-apps/kraken.
+However, the files have to be copied into the project in order for the Algolia search engine to properly index them so
+that they appear in search results.
+The files must also be renamed to not start with an underscore, otherwise Jekyll will not publish them to the site.
+Since the files are all inter-linked, the links inside each file must also be changed to omit the leading underscore.
+{% endcomment %}
+
+<style>
+.main-content {
+    margin-left: 0;
+    max-width: 100%;
+    padding-top: 10px;
+}
+iframe {
+    border: 0;
+    left: -100px;
+    width: 100%;
+    height: calc(100vh - 64px);
+}
+</style>
+<iframe id="jsapi-frame" src="/jslib-api-docs/index.html" border="0"></iframe>
+<script>
+  jQuery(function($) {
+      var url = '';
+      if (window.location.search) {
+          url += decodeURIComponent(window.location.search.substring(1));
+      }
+      if (window.location.hash) {
+          url += window.location.hash;
+      }
+      if (url) {
+          $('#jsapi-frame').attr('src', '/jslib-api-docs/' + url);
+      }
+  });
+</script>

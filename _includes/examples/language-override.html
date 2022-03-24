@@ -1,0 +1,31 @@
+<body>
+    <noscript>Please enable JavaScript to view this content.</noscript>
+
+    <p>This is where your page content would be.</p>
+
+    <div id="my-form"></div>
+
+    <script src="https://services.sheerid.com/docs/sheerid.js"></script>
+    <script>
+        try {
+            // Create a program at trial-services.sheerid.com
+            var myProgramId = '5bbd127d9781852f68e14ddc';
+            var sheerId = window.sheerId;
+            sheerId.setOptions({
+                logLevel: 'info',
+                messages: {
+                    'step.collectStudentPersonalInfo.title': 'Verify (js options override)',
+                    step: {
+                        collectStudentPersonalInfo: {
+                            subtitle: 'Verify Subtitle (js)',
+                        }
+                    }
+                }
+            });
+
+            var myForm = new sheerId.VerificationForm(document.getElementById('my-form'), myProgramId);
+        } catch (e) {
+            console.error(e);
+        }
+    </script>
+</body>

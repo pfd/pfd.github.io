@@ -1,0 +1,6 @@
+{% assign sorted_pages = (site._glossary | sort: 'term') %}
+{% for term in sorted_pages %}
+<h3 id="{{ term.term | slugify }}">{{ term.term }}</h3>
+<dd>{{ term.content | markdownify | replace: 'href="../', 'href="terms/' }}</dd>
+{% endfor %}
+

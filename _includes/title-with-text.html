@@ -1,0 +1,23 @@
+{% for title in site.data.landingTitles %}
+  {% if {{title.name}} == {{include.name}}%}
+    {% if {{include.fixedPosition}} %}
+      {% include simple-title.html props=title %}
+    {% else %}
+      {% if title.startWithImage %}
+<div class="split-content">
+<div class="{{ title.imageClass }}">
+{% include image.md name=title.image %}
+</div>
+{% include marginated-text.html props=title %}
+</div>
+      {% else %}
+<div class="split-content">
+{% include marginated-text.html props=title %}
+<div class="{{ title.imageClass }}">
+{% include image.md name=title.image %}
+</div>
+</div>
+      {% endif %}
+    {% endif %}
+  {% endif %}
+{% endfor %}

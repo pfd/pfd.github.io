@@ -1,0 +1,16 @@
+- name: mobileRedirect
+  required: false
+  default: false
+  description: Set this value to <code>true</code> and add a <code>mobileThreshold</code> to bypass using a modal if the user’s screen width is below the <code>mobileThreshold</code>. This improves the user experience on mobile devices.
+- name: mobileThreshold
+  required: false
+  default: 620
+  description: Combine with <code>mobileRedirect</code> to set when the modal is dismissed. Screen widths below this value will not use a modal and redirect the user to verification URL. 
+- name: stopPropagation
+  required: false
+  default: false
+  description: Set to <code>true</code> to prevent the modal click event from bubbling up the DOM.
+- name: closeButtonText
+  required: false
+  default: "''"
+  description: Use this to change the text for the close modal element.

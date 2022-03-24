@@ -1,0 +1,8 @@
+<!--- Renders the entire glossary -->
+
+{% assign sorted_terms = site._glossary | sort: 'term' %}
+{% for term in sorted_terms %}
+    <h3 id="{{ term.term | slugify }}">{{ term.term }}</h3>
+    {{ term.output }}
+{% endfor %}
+

@@ -1,0 +1,14 @@
+
+<div class="{{ include.props.class }}" id="{{ include.props.name }}">
+{{ include.props.title }}
+<div class="{{ include.props.textClass }}">
+{{ include.props.text }}
+</div>
+<div class="title-buttons-container">
+{% for button in include.props.buttons %}
+<a class="title-button" href="{{ button.href }}">
+{{ button.name }}
+</a>
+{% endfor %}
+</div>
+</div>

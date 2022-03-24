@@ -1,0 +1,86 @@
+<div id="swagger-ui">
+  <ul>
+    {%- for path in site.data.swagger.paths -%}
+      {%- for method in page.keyword_methods -%}
+        {%- if path[1][method] -%}
+          {%- assign operation = path[1][method] -%}
+          {%- assign operation_id = "operations_" | append: operation.tags[0] | append: "_" | append: operation.operationId -%}
+          <li id="{{ operation_id }}">
+            {{ method }} {{ path[0] | append: " " }}
+            {%- for field in page.keyword_fields -%}
+              {%- if operation[field] -%}
+                {{ operation[field] | append: " " }}
+              {%- endif -%}
+            {%- endfor -%}
+          </li>
+        {%- endif -%}
+      {%- endfor- %}
+    {%- endfor -%}
+  </ul>
+</div>
+
+<link rel="stylesheet" type="text/css" href="/swagger-ui/swagger-ui.css" >
+<style>
+  .main-content {
+    max-width: max-content;
+  }
+  #swagger-ui .col {
+    width: auto;
+  }
+  #swagger-ui .topbar {
+    display: none;
+  }
+  #swagger-ui .information-container {
+    display: none;
+  }
+  #swagger-ui .errors-wrapper {
+    display: none;
+  }
+</style>
+<script src="/swagger-ui/swagger-ui-bundle.js"> </script>
+<script src="/swagger-ui/swagger-ui-standalone-preset.js"> </script>
+<script>
+    jQuery(function($) {
+        function updateSidebarNav() {
+            var listContainer = $('#sidebar #endpoints-list');
+            $(".opblock-tag-section").each(function(i, element){
+                element = $(element).find(".opblock-tag");
+                var id = element.attr('id');
+                var tag = element.data('tag');
+                $('<li>').append($('<a/>', {href: '#' + id, text: '/' + tag}))
+                    .appendTo(listContainer);
+            });
+        }
+
+        function render(domId, spec) {
+            window.ui = SwaggerUIBundle({
+                spec: spec,
+                dom_id: domId,
+                deepLinking: true,
+                presets: [
+                    SwaggerUIBundle.presets.apis,
+                    SwaggerUIStandalonePreset
+                ],
+                plugins: [
+                    SwaggerUIBundle.plugins.DownloadUrl
+                ],
+                layout: "StandaloneLayout",
+                validatorUrl: null,  // disable validation
+                onComplete: updateSidebarNav
+            });
+        }
+
+        render('#swagger-ui', {{ site.data.swagger | jsonify | replace: "/rest/v2", "https://services.sheerid.com/rest/v2/" }});
+    });
+</script>
+<script>
+  jQuery(document).ready(function(){
+    setTimeout(function(){
+      var link = window.location.href;
+    if(link.indexOf("#") !== -1){
+      var y = $(window).scrollTop();
+      $(window).scrollTop(y+825);
+    }
+    },1000);
+  })
+</script>
