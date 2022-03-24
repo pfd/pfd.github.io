@@ -20,7 +20,7 @@ description: >- # this means to ignore newlines until "baseurl:"
   platform. Add instant verification of your gated offers. You choose who
   qualifies. We enforce your requirements.
 baseurl: "" # the subpath of your site, e.g. /blog
-url: "https://developer.sheerid.com" # the base hostname & protocol for your site, e.g. http://example.com
+url: "https://pfd.github.io" # the base hostname & protocol for your site, e.g. http://example.com
 
 permalink: pretty
 livereload: false
@@ -129,14 +129,14 @@ _options:
     table: true
     styles: /css/editor.css
 
-algolia:
-  application_id: UOHZ2NO6JA
-  index_name: sheerID
-  nodes_to_index: 'p,li,h1,h2,h3'
-  search_only_api_key: 99056eccfa8a73d0b198c947886c0076
-  files_to_exclude:
-    - news.html
-    - _posts/2019-09-18-release.md
+# algolia:
+#   application_id: UOHZ2NO6JA
+#   index_name: sheerID
+#   nodes_to_index: 'p,li,h1,h2,h3'
+#   search_only_api_key: 99056eccfa8a73d0b198c947886c0076
+#   files_to_exclude:
+#     - news.html
+#     - _posts/2019-09-18-release.md
 
 toc:
   min_level:        2
