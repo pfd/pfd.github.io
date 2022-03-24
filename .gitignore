@@ -1,0 +1,49 @@
+# Common IDE config files
+
+### IntelliJ IDEA
+.idea
+*.iws
+*.iml
+*.ipr
+
+### Spring Tool Suite / Eclipse
+.apt_generated
+.classpath
+.factorypath
+.project
+.settings
+.springBeans
+.sts4-cache
+.metadata
+
+### NetBeans
+/nbproject/private/
+/build/
+/nbbuild/
+/dist/
+/nbdist/
+/.nb-gradle/
+
+### Visual Studio
+.vscode
+
+### VI
+*.swp
+
+# Common OS files
+.DS_Store
+Thumbs.db
+*.ithmb
+
+# Developer config
+.gitmessage
+
+# Other
+
+_site
+.sass-cache
+.jekyll-metadata
+sample-project
+todo.todo
+
+jslib-api-docs
