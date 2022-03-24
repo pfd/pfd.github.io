@@ -1,8 +1,8 @@
 #!/bin/bash
 
 # Verify we are running from master branch
-if [ `git rev-parse --abbrev-ref HEAD` != "master" ]; then
-    (>&2 echo "Error: Not on branch 'master'")
+if [ `git rev-parse --abbrev-ref HEAD` != "main" ]; then
+    (>&2 echo "Error: Not on branch 'main'")
     exit 1
 fi
 
@@ -46,12 +46,13 @@ git commit -m "latest changes to be published"
 git push -f origin gh-pages
 
 #return to master branch
-git checkout master
+git checkout main
 
 #update algolia index
-make update-algolia
+#nope
+#make update-algolia
 
 git fetch
 git pull
 
-echo 'All done. check latest changes at http://developer.sheerid.com'
+echo 'All done. check latest changes at https://pfd.github.io/'
