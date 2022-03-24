@@ -12,5 +12,4 @@ include:
 
 future: true
 
-# To update algolia dev_sheerid index manually:
-# JEKYLL_ENV=development ALGOLIA_API_KEY='9705708ed8146cc0cd23b2d339cffcad' bundle exec jekyll algolia --config "_config.yml,_config_dev.yml"
+
