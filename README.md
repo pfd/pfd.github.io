@@ -18,7 +18,7 @@ This is the repo for the publicly-accessible SheerID [Developer Center](http://d
 1. Start jekyll (using Docker)
 
         export JEKYLL_VERSION=3.8
-        docker run --name docs \
+        docker run --name pfd \
             -p 4000:4000 \
             --volume="$PWD:/srv/jekyll" \
             -it jekyll/jekyll:$JEKYLL_VERSION \
