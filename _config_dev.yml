@@ -8,11 +8,7 @@ exclude:
 include:
   - robots.txt
 
-algolia:
-  application_id: O5IRJ16G25
-  index_name: dev_sheerid
-  nodes_to_index: 'p,li,h1,h2,h3'
-  search_only_api_key: a01e1186e2fbbb8d6a7e0805fcfacfcd
+
 
 future: true
 

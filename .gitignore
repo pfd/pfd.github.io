@@ -40,7 +40,7 @@ Thumbs.db
 
 # Other
 
-_site
+_site/
 .sass-cache
 .jekyll-metadata
 sample-project
