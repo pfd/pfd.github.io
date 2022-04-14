@@ -1,0 +1,41 @@
+reporting issues:
+    ☐ make an index page for reporting?
+    ☐ figure out TOC on glossary page- remove numbering
+    ☐ document ROI impact demo
+    ☐ test algolia index on dev
+    ☐ glossary tooltip?
+    {% glossary_tooltip text="cluster" term_id="cluster" %}
+
+kevin issues:
+    ☐ Glossary ideas
+    https://circleci.com/docs/2.0/glossary/
+    http://opendatahandbook.org/glossary/en/
+    ☐ is corporate included? For the `CORPORATE` Organization Type, the values will be the Company (Employer) selected by the individual requesting eligibility verification.
+
+General:
+    ☐ add jekyll-sitemap plugin
+    ☐ add jekyll-seo plugin
+    
+Archive:
+  ✔ consider swappng out the link-copy js to the anchor thing @done(19-07-01 16:59) @project(reporting issues)
+  ✔ fix ugly slugify URLs in TOC @done(19-06-30 11:54) @project(reporting issues)
+  ✔ 404 link from http://developer.sheerid.com/concepts#errors #149 @done(19-06-29 19:55) @project(issues)
+  ✔ new issue- update all procedural to 2nd person @done(19-04-30 06:59) @project(parking lot)
+  ✔ reporting section:format tables better (maybe just bullets), provide details on each data point @done(19-04-30 06:59) @project(issues)
+  ✔ pfd final review @done(19-04-30 06:59) @project(issues)
+  ✔ explain examples from source @done(19-04-30 06:59) @project(issues)
+  ✔ #73 Fetching Orgs Tutorial references deprecated endpoints - leaving open for now @done(19-03-28 13:50) @project(issues)
+  ✔ Keep Getting Started to be Easy Install + Quickstart @done(19-03-27 09:12) @project(getting started)
+  ✔ JavaScript Library as its own page (not a second level) @done(19-03-27 09:12) @project(getting started)
+  ✔ REST API as it's own page (not a second level) @done(19-03-27 09:12) @project(getting started)
+  ✔ REST API Reference in Header @done(19-03-27 10:26) @project(getting started)
+  ✔ JS Library Reference in Header @done(19-03-27 10:26) @project(getting started)
+  ✔ How should we refer to instances of "my sheer id dot com etc" - link? all lower? if link, open in new tab? @done(19-03-27 09:01) @project(parking lot)
+  ✔ feeback from devs- any further info on the "api basics" page? @done(19-03-27 09:01) @project(parking lot)
+  ✔ #65 Remove Add Styles mention from Add JS Library @done(19-03-27 09:00) @project(issues)
+  ✔ #33 Any examples in this site that use {{<script>}} should show subresource integrity for our files @done(19-03-27 09:00) @project(issues)
+  ✔ #79 Aaron's suggested changes @done(19-03-24 17:52) @project(issues)
+  ✔ #72 Clean up API reference page @done(19-03-24 20:10) @project(issues)
+  ✔ #70 Comments on API Walkthrough tutorial @done(19-03-24 20:10) @project(issues)
+  ✔ #83 Change page Titles in Integration section @done(19-03-24 13:02) @project(issues)
+  ✔ #78 Replace UI Toolkit with JavaScript Library @done(19-03-24 13:10) @project(issues)
