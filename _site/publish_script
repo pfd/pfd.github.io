@@ -23,14 +23,14 @@ fi
 #git add -A
 #git commit -m "Updating jslib spec"
 
-# Push new commits to origin
-git push
+# # Push new commits to origin
+# git push
 
 #build
 JEKYLL_ENV=production bundle exec jekyll b
 
 #check out gh-pages branch
-git checkout gh-pages
+git checkout -b gh-pages
 
 #Remove all but _site/ folder
 mv _site /tmp/
